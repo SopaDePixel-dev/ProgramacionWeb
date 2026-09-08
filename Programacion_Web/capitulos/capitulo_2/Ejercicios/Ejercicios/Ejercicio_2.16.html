@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 2.16 -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 2.16 - Retroalimentaci&oacute;n de Visita al Campus</title>
+   </head>
+
+   <body>
+      <h1>Formulario de retroalimentaci&oacute;n del campus</h1>
+      <p>Por favor, llene el siguiente formulario para dar sus comentarios sobre su visita.</p>
+
+      <form method = "post" action = "http://www.deitel.com">
+         <p>
+            <label>Nombre:
+               <input type = "text" name = "nombre" size = "30" maxlength = "50" required>
+            </label>
+         </p>
+
+         <p>
+            <label>Correo electr&oacute;nico:
+               <input type = "email" name = "email" size = "30" maxlength = "50" required>
+            </label>
+         </p>
+
+         <p><strong>&iquest;Qu&eacute; fue lo que m&aacute;s le gust&oacute; del campus?</strong></p>
+
+         <p>
+            <label><input type = "checkbox" name = "gusto" value = "campus"> Campus</label><br>
+            <label><input type = "checkbox" name = "gusto" value = "estudiantes"> Estudiantes</label><br>
+            <label><input type = "checkbox" name = "gusto" value = "ubicacion"> Ubicaci&oacute;n</label><br>
+            <label><input type = "checkbox" name = "gusto" value = "ambiente"> Ambiente</label><br>
+            <label><input type = "checkbox" name = "gusto" value = "dormitorios"> Dormitorios</label><br>
+            <label><input type = "checkbox" name = "gusto" value = "deportes"> Deportes</label>
+         </p>
+
+         <p><strong>&iquest;C&oacute;mo se interes&oacute; en la universidad?</strong></p>
+
+         <p>
+            <label><input type = "radio" name = "interes" value = "amigos" checked> Amigos</label><br>
+            <label><input type = "radio" name = "interes" value = "profesores"> Profesores</label><br>
+            <label><input type = "radio" name = "interes" value = "internet"> Internet</label><br>
+            <label><input type = "radio" name = "interes" value = "otros"> Otros</label>
+         </p>
+
+         <p>
+            <label>Comentarios adicionales:<br>
+               <textarea name = "comentarios" rows = "4" cols = "40"></textarea>
+            </label>
+         </p>
+
+         <p>
+            <input type = "submit" value = "Enviar retroalimentaci&oacute;n">
+            <input type = "reset" value = "Borrar">
+         </p>
+      </form>
+
+      <a href="file:///C:/Users/monsi/Desktop/Porqueria_Programacion/.vscode/Programacion_Web/capitulos/capitulo_2/Ejercicios/ejercicios_2.html">
+         <p> Regresar </p>
+      </a>
+   </body>
+</html>
