@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 3- Elementos de HTML5</title>
+   </head>
+   <body>
+      <h1>Ejercicio 3.5: Escriba un elemento (o elementos) de HTML5 para realizar cada una de las siguientes tareas</h1>
+      <ol type="a">
+         <li>
+            Se pidió a los estudiantes que clasificaran los alimentos en la cafetería, en una escala del 1 al 10. Use un elemento <code>meter</code> con texto a su izquierda y a su derecha para indicar que la calificación promedio fue 7 de 10.
+            <pre><code>1 <meter min="1" max="10" value="7">7</meter> 10</code></pre>
+         </li>
+         <li>
+            Cree un elemento <code>details</code> que muestre el texto "Resultados de la encuesta" en el elemento <code>summary</code> para la parte (a). Cuando el usuario haga clic en la flecha enseguida del texto de summary, deberá aparecer un párrafo que explique sobre la encuesta.
+            <pre><code>&lt;details&gt;
+   &lt;summary&gt;Resultados de la encuesta&lt;/summary&gt;
+   &lt;p&gt;La calificación promedio de los alimentos en la cafetería fue de 7 sobre 10 según la opinión de los estudiantes.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+         </li>
+         <li>
+            Cree un elemento <code>input</code> text para el primer nombre. El elemento deberá recibir el enfoque de manera automática al momento de desplegar el formulario en un navegador.
+            <pre><code>&lt;label&gt;Primer nombre: &lt;input type="text" autofocus /&gt;&lt;/label&gt;</code></pre>
+         </li>
+         <li>
+            Modifique la parte (c) de modo que se elimine el elemento <code>label</code> y use texto en un elemento <code>placeholder</code> en el elemento <code>input</code>.
+            <pre><code>&lt;input type="text" placeholder="Primer nombre" autofocus /&gt;</code></pre>
+         </li>
+         <li>
+            Use un elemento <code>datalist</code> para proveer una lista autocomplete para cinco estados.
+            <pre><code>&lt;input type="text" list="estados" placeholder="Seleccione un estado" /&gt;
+&lt;datalist id="estados"&gt;
+   &lt;option value="Veracruz"&gt;
+   &lt;option value="Jalisco"&gt;
+   &lt;option value="Nuevo León"&gt;
+   &lt;option value="Puebla"&gt;
+   &lt;option value="Yucatán"&gt;
+&lt;/datalist&gt;</code></pre>
+         </li>
+         <li>
+            Cree un elemento <code>input</code> range que permita al usuario seleccionar un número del 1 al 100.
+            <pre><code>&lt;input type="range" min="1" max="100" value="50" /&gt;</code></pre>
+         </li>
+         <li>
+            Especifique que no debe permitirse el atributo autocomplete en un formulario. Muestre sólo la etiqueta de apertura del formulario.
+            <pre><code>&lt;form method="post" autocomplete="off"&gt;</code></pre>
+         </li>
+         <li>
+            Use un elemento <code>mark</code> para resaltar el segundo enunciado del siguiente párrafo:
+            <code>&lt;p&gt;Se pidió a los estudiantes que calificaran los alimentos en la cafetería. En una escala del 1 al 10. El resultado promedio fue 7.&lt;/p&gt;</code>
+            <pre><code>&lt;p&gt;Se pidió a los estudiantes que calificaran los alimentos en la cafetería. &lt;mark&gt;En una escala del 1 al 10. El resultado promedio fue 7.&lt;/mark&gt;&lt;/p&gt;</code></pre>
+         </li>
+      </ol>
+
+      <hr>
+      <a href="../../Actividades/index_Actividades.html">
+        <p>Regresar</p>
+      </a>
+   </body>
+</html>

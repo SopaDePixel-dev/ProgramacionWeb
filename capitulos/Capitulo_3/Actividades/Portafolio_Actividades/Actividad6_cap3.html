@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 6 - Creación de un formulario autocomplete con un elemento datalist</title>
+   </head>
+   <body>
+      <h1>Ejercicio 6: Creación de un formulario autocomplete con un elemento datalist</h1>
+      <form method="post">
+         <p>
+            <label for="diaSemana">Día de la semana:
+               <input type="text" id="diaSemana" name="diaSemana" placeholder="Selecciona un día" list="dias" />
+               <datalist id="dias">
+                  <option value="Lunes">
+                  <option value="Martes">
+                  <option value="Miércoles">
+                  <option value="Jueves">
+                  <option value="Viernes">
+                  <option value="Sábado">
+                  <option value="Domingo">
+               </datalist>
+            </label>
+         </p>
+         <p>
+            <input type="submit" value="Enviar" />
+            <input type="reset" value="Borrar" />
+         </p>
+      </form>
+      <hr>
+      <a href="../../Actividades/index_Actividades.html">
+         <p>Regresar</p>
+      </a>
+   </body>
+</html>

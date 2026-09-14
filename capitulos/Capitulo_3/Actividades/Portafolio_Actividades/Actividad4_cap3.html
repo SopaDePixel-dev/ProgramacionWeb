@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 3.6 - Formulario de registro Web con encuesta opcional</title>
+   </head>
+   <body>
+      <h1>Ejercicio 4: Formulario de registro Web con encuesta opcional</h1>
+      <form method="post" action="http://www.deitel.com">
+         <p>
+            <label>Primer nombre:
+               <input type="text" name="primerNombre" placeholder="Primer nombre" required />
+            </label>
+         </p>
+         <p>
+            <label>Apellido:
+               <input type="text" name="apellido" placeholder="Apellido" required />
+            </label>
+         </p>
+         <p>
+            <label>Correo electrónico:
+               <input type="email" name="email" placeholder="nombre@dominio.com" required />
+            </label>
+         </p>
+
+         <details>
+            <summary>Encuesta opcional</summary>
+            <p>
+               <label>¿En qué año se encuentra en la universidad?:
+                  <input type="text" name="anioUniversidad" placeholder="Ej. Primer año" />
+               </label>
+            </p>
+         </details>
+
+         <p>
+            <input type="submit" value="Enviar" />
+            <input type="reset" value="Borrar" />
+         </p>
+      </form>
+      <hr>
+      <a href="../../Actividades/index_Actividades.html">
+        <p>Regresar</p>
+      </a>
+   </body>
+</html>
