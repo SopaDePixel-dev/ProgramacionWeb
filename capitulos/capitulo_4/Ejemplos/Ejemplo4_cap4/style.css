@@ -1,0 +1,14 @@
+/* Ejemplo 4 Cap 4 */
+/* Fig. 4.8: style.css */
+/* Hoja de estilo externa */
+h1 {
+    font-family: tahoma, helvetica, sans-serif;
+    color: darkblue;
+    text-align: center;
+}
+
+p {
+    font-size: 14pt;
+    color: darkred;
+    font-family: arial, sans-serif;
+}
