@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 7</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #2b5b84;
+            color: #ffffff;
+            border: 2px solid #1a364f;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .columna {
+            float: left;
+            width: 48%;
+            margin: 1%;
+            padding: 15px;
+            border: 2px dashed #444444;
+            background-color: #e8f4f8;
+            min-height: 120px;
+        }
+
+        .contenedor::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .boton-regresar {
+            margin-top: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Actividad 7</h1>
+        <p>Encabezado principal (header)</p>
+    </header>
+
+    <div class="contenedor">
+        <p class="columna">
+            <strong>Columna 1:</strong> Este es el primer parrafo flotado a la izquierda mediante la propiedad <code>float: left;</code>. Cuenta con borde y color de fondo para visualizar su área.
+        </p>
+
+        <p class="columna">
+            <strong>Columna 2:</strong> Este es el segundo parrafo, colocado junto al primero formando la segunda columna gracias al flujo generado por <code>float</code>.
+        </p>
+    </div>
+
+    <div class="boton-regresar">
+        <a href="index_Actividades.html">
+            <button type="button">Regresar</button>
+        </a>
+    </div>
+
+</body>
+</html>
