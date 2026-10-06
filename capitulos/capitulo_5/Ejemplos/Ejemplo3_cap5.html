@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<!-- Fig. 5.3: sombracaja.html -->
+<!-- Creación de efectos de sombra de texto. -->
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Ejemplo 3</title>
+        <style type = "text/css">
+            div
+            {
+                width: 200px;
+                height: 200px;
+                background-color: plum;
+                box-shadow: 25px 25px 50px dimgrey;
+                float: left;
+                margin-right: 120px;
+                margin-top: 40px;
+            }
+            #caja2
+            {
+                width: 200px;
+                height: 200px;
+                background-color: plum;
+                box-shadow: -25px -25px 50px dimgrey;
+            }
+            h2
+            {
+                text-align: center;
+            }
+            .boton-regresar
+            {
+                clear: both;
+                padding-top: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h2>Sombra de caja inferior y derecha</h2></div>
+        <div id = "caja2"><h2>Sombra de caja superior e izquierda</h2></div>
+
+        <div class="boton-regresar">
+            <a href="index_Ejemplos.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </body>
+</html>

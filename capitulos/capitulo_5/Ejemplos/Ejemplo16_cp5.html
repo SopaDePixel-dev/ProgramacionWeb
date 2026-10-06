@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<!-- Fig. 5.17: multicolumna.html -->
+<!-- Texto multicolumna en CSS3. -->
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Ejemplo 16</title>
+        <style type = "text/css">
+            p
+            { margin:0.9em 0em; }
+            .multicolumna
+            {
+                /* establecer el número de columnas en 3 */
+                -webkit-column-count: 3;
+                -moz-column-count: 3;
+                -o-column-count: 3;
+                column-count: 3;
+                /* establecer el espacio entre columnas en 30px */
+                -webkit-column-gap: 30px;
+                -moz-column-gap: 30px;
+                -o-column-gap: 30px;
+                column-gap: 30px;
+                /* agregar una línea negra de 1px entre cada columna */
+                -webkit-column-rule: 1px outset black;
+                -moz-column-rule: 1px outset black;
+                -o-column-rule: 1px outset black;
+                column-rule: 1px outset black;
+            }
+            .boton-regresar
+            {
+                margin-top: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Computadoras, hardware y software</h1>
+        </header>
+        <div class = "multicolumna">
+            <p>Una computadora es un dispositivo capaz de procesar datos, ejecutar operaciones aritméticas y lógicas a alta velocidad y almacenar grandes volúmenes de información. La evolución del hardware ha permitido que dispositivos compactos superen ampliamente la capacidad de procesamiento de las primeras supercomputadoras.</p>
+            <p>El software coordina y dirige las tareas que realiza la máquina mediante programas e instrucciones estructuradas. Gracias a paradigmas como la programación orientada a objetos y las herramientas de diseño modernas, el desarrollo de sistemas complejos se ha vuelto más estructurado, robusto y eficiente.</p>
+            <p>Los componentes físicos abarcan periféricos de entrada y salida, memorias de acceso rápido y microprocesadores. Estos microcontroladores y chips se integran hoy en día en incontables entornos cotidianos, desde automóviles y electrodomésticos inteligentes hasta redes de comunicaciones globales.</p>
+            <footer>
+                <em>Todos los derechos reservados.</em>
+            </footer>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Ejemplos.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </body>
+</html>

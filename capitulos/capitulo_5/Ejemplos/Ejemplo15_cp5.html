@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo 15</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rosario&display=swap" rel="stylesheet">
+    <style>
+        .flexbox {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            width: 100%;
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        .flexbox > div {
+            flex: 1;
+            background-color: lightgrey;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 5px 5px 15px dimgrey;
+            transition: all 0.5s ease-out;
+            font-family: "Rosario", sans-serif;
+            min-height: 250px;
+        }
+
+        .flexbox > div:hover {
+            color: white;
+            font-weight: bold;
+            transform: scale(1.05);
+        }
+
+        /* Colores dinámicos al pasar el ratón */
+        .flexbox > div:nth-child(1):hover { background-color: royalblue; }
+        .flexbox > div:nth-child(2):hover { background-color: crimson; }
+        .flexbox > div:nth-child(3):hover { background-color: darkorange; }
+        .flexbox > div:nth-child(4):hover { background-color: darkgreen; }
+
+        .flexbox p {
+            overflow: hidden;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .boton-regresar {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flexbox">
+        <div>
+            <p><strong>Buenas prácticas:</strong> Recomendaciones y metodologías estándar para desarrollar software ordenado y fácil de mantener.</p>
+        </div>
+        <div>
+            <p><strong>Prevención de errores:</strong> Estrategias para evitar fallos de sintaxis o lógica durante la codificación.</p>
+        </div>
+        <div>
+            <p><strong>Errores comunes:</strong> Análisis de equivocaciones habituales cometidas al aprender a programar.</p>
+        </div>
+        <div>
+            <p><strong>Ingeniería de software:</strong> Enfoques para estructurar la arquitectura y el diseño de proyectos a gran escala.</p>
+        </div>
+    </div>
+
+    <div class="boton-regresar">
+        <a href="index_Ejemplos.html">
+            <button type="button">Regresar</button>
+        </a>
+    </div>
+
+</body>
+</html>
