@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 5.13</title>
+    <link href="http://fonts.googleapis.com/css?family=Rosario" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 750px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1a365d;
+            margin-bottom: 25px;
+        }
+
+        /* Caja flexible vertical */
+        .flexbox {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+
+            /* Orientación vertical */
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+
+            width: 550px;
+            margin: 0 auto;
+            gap: 15px;
+        }
+
+        .flexbox > div {
+            -webkit-transition: 0.5s ease-out;
+            -moz-transition: 0.5s ease-out;
+            transition: 0.5s ease-out;
+
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            border: 2px solid black;
+            padding: 15px 20px;
+            box-shadow: 5px 5px 10px dimgrey;
+            min-height: 80px;
+        }
+
+        /* Colores base para cada tarjeta */
+        .flexbox > div:nth-child(1) { background-color: lightgrey; }
+        .flexbox > div:nth-child(2) { background-color: lightgrey; }
+        .flexbox > div:nth-child(3) { background-color: lightgrey; }
+        .flexbox > div:nth-child(4) { background-color: lightgrey; }
+
+        /* Efecto al pasar el cursor */
+        .flexbox > div:hover {
+            color: white;
+            font-weight: bold;
+            transform: scale(1.02);
+        }
+
+        .flexbox > div:nth-child(1):hover { background-color: royalblue; }
+        .flexbox > div:nth-child(2):hover { background-color: crimson; }
+        .flexbox > div:nth-child(3):hover { background-color: darkorange; }
+        .flexbox > div:nth-child(4):hover { background-color: darkgreen; }
+
+        .flexbox p {
+            margin: 5px 0 0 0;
+            font-family: "Rosario", sans-serif;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>5.13 Caja flexible vertical (MDCF)</h2>
+
+        <div class="flexbox">
+            <div>
+                <p><strong>Buenas prácticas:</strong> Recomendaciones y metodologías estándar para desarrollar software ordenado y fácil de mantener.</p>
+            </div>
+            <div>
+                <p><strong>Prevención de errores:</strong> Estrategias para evitar fallos de sintaxis o lógica durante la codificación.</p>
+            </div>
+            <div>
+                <p><strong>Errores comunes:</strong> Análisis de equivocaciones habituales cometidas al aprender a programar.</p>
+            </div>
+            <div>
+                <p><strong>Ingeniería de software:</strong> Enfoques para estructurar la arquitectura y el diseño de sistemas escalables.</p>
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

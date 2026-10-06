@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 5.5</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .cajas-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .caja {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid black;
+            box-sizing: border-box;
+        }
+
+        #caja1 {
+            border-radius: 10px;
+            background-color: lightcoral;
+        }
+
+        #caja2 {
+            border-radius: 50px;
+            background-color: lightgreen;
+        }
+
+        #caja3 {
+            border-radius: 100px;
+            background-color: lightskyblue;
+        }
+
+        .boton-regresar {
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>5.5 Esquinas redondeadas</h2>
+
+        <div class="cajas-flex">
+            <div id="caja1" class="caja">
+                <b>10px</b>
+            </div>
+            <div id="caja2" class="caja">
+                <b>50px</b>
+            </div>
+            <div id="caja3" class="caja">
+                <b>100px</b>
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

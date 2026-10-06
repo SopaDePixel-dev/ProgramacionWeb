@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5.16</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 30px;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .contenedor {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        /* Formato multicolumna estándar (3 columnas para pantallas grandes) */
+        .contenido {
+            -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+
+            -webkit-column-gap: 30px;
+            -moz-column-gap: 30px;
+            column-gap: 30px;
+
+            -webkit-column-rule: 1px solid #cbd5e0;
+            -moz-column-rule: 1px solid #cbd5e0;
+            column-rule: 1px solid #cbd5e0;
+
+            text-align: justify;
+        }
+
+        .contenido p {
+            margin: 0 0 1.2em 0;
+        }
+
+        /* Consulta de medios para pantallas móviles de 480px o menos */
+        @media handheld and (max-width: 480px),
+               screen and (max-device-width: 480px),
+               screen and (max-width: 480px) {
+            .contenido {
+                -webkit-column-count: 1;
+                -moz-column-count: 1;
+                column-count: 1;
+                -webkit-column-rule: none;
+                -moz-column-rule: none;
+                column-rule: none;
+            }
+
+            .contenedor {
+                padding: 20px;
+            }
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <header>
+            <h1>5.16 Diseño Multicolumna Responsivo</h1>
+        </header>
+
+        <div class="contenido">
+            <p>El diseño web responsivo permite que el contenido visual y textual se adapte dinámicamente a las dimensiones físicas y lógicas de cualquier pantalla, garantizando una lectura cómoda tanto en monitores de escritorio como en terminales móviles.</p>
+            <p>Mediante el uso de consultas de medios (media queries), CSS evalúa las características del dispositivo en tiempo real, tales como su anchura o resolución, aplicando reglas específicas cuando se cumplen los criterios definidos por el desarrollador.</p>
+            <p>En este ejemplo, la disposición multicolumna distribuye el texto de manera equilibrada a lo largo del espacio disponible en equipos grandes, y se contrae de forma automática a una sola columna cuando el ancho resulta igual o menor a 480 píxeles.</p>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

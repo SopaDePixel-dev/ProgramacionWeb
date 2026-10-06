@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 5.6</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 950px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .cajas-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .caja {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        #caja1 {
+            background-color: plum;
+            box-shadow: 15px 15px 20px dimgrey;
+        }
+
+        #caja2 {
+            background-color: lightsalmon;
+            box-shadow: -15px -15px 30px dimgrey;
+        }
+
+        #caja3 {
+            background-color: lightseagreen;
+            box-shadow: 15px 15px 10px dimgrey;
+            color: #ffffff;
+        }
+
+        .boton-regresar {
+            margin-top: 40px;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>5.6 Sombra de caja (box-shadow)</h2>
+
+        <div class="cajas-flex">
+            <div id="caja1" class="caja">Caja 1</div>
+            <div id="caja2" class="caja">Caja 2</div>
+            <div id="caja3" class="caja">Caja 3</div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

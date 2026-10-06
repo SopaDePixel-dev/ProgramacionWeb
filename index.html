@@ -1,28 +1,103 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="es">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 35px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2b5b84;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            color: #4a5568;
+            font-size: 1.3rem;
+            margin: 15px 0 25px 0;
+            font-weight: normal;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #e2e8f0;
+            margin: 20px 0;
+        }
+
+        .menu-navegacion {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .enlace-capitulo {
+            display: block;
+            text-decoration: none;
+            color: #0066cc;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px 20px;
+            background-color: #ffffff;
+            border: 1px solid #ccd1d9;
+            border-radius: 6px;
+            width: 80%;
+            max-width: 320px;
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+        }
+
+        .enlace-capitulo:hover {
+            background-color: #2b5b84;
+            color: #ffffff;
+            border-color: #2b5b84;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body">
-    
-    <h1  style="text-align: center;"> Ian Zaid Trujillo Miranda </h1>
-    <hr>
-    <h2  style="text-align: center;"> Capitulos </h2>
-    <hr>
-    <a href="capitulos/capitulo_2/capitulo_2.html"> 
-        <p> Capitulo 2 </p>
-    </a>
-    <a href="capitulos/Capitulo_3/index_cp3.html">
-        <p> Capitulo 3 </p>
-    </a>
-    <a href="capitulos/capitulo_4/index_cap4.html">
-        <p> Capitulo 4 </p>
-    </a>
-    <a href = "capitulos/capitulo_5/index_cp5.html">
-    <p> Capitulo 5</p>
-    </a>
+<body>
+
+    <div class="contenedor">
+        <h1>Ian Zaid Trujillo Miranda</h1>
+        <hr>
+        <h2>Capítulos</h2>
+        <hr>
+
+        <div class="menu-navegacion">
+            <a href="capitulos/capitulo_2/capitulo_2.html" class="enlace-capitulo">
+                Capítulo 2
+            </a>
+            <a href="capitulos/Capitulo_3/index_cp3.html" class="enlace-capitulo">
+                Capítulo 3
+            </a>
+            <a href="capitulos/capitulo_4/index_cap4.html" class="enlace-capitulo">
+                Capítulo 4
+            </a>
+            <a href="capitulos/capitulo_5/index_cp5.html" class="enlace-capitulo">
+                Capítulo 5
+            </a>
+        </div>
+    </div>
+
 </body>
 </html>

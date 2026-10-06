@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 5.10</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 250px;
+            margin: 20px 0;
+        }
+
+        .textbox {
+            background: lightgreen;
+            height: 100px;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: 3px solid DarkGreen;
+            border-radius: 15px;
+            -webkit-animation: inclinarAlternado 4s infinite ease-in-out;
+            -moz-animation: inclinarAlternado 4s infinite ease-in-out;
+            animation: inclinarAlternado 4s infinite ease-in-out;
+        }
+
+        @-webkit-keyframes inclinarAlternado {
+            0%   { -webkit-transform: skewY(0deg) skewX(0deg); }
+            25%  { -webkit-transform: skewY(30deg) skewX(0deg); }
+            50%  { -webkit-transform: skewY(0deg) skewX(0deg); }
+            75%  { -webkit-transform: skewY(0deg) skewX(30deg); }
+            100% { -webkit-transform: skewY(0deg) skewX(0deg); }
+        }
+
+        @-moz-keyframes inclinarAlternado {
+            0%   { -moz-transform: skewY(0deg) skewX(0deg); }
+            25%  { -moz-transform: skewY(30deg) skewX(0deg); }
+            50%  { -moz-transform: skewY(0deg) skewX(0deg); }
+            75%  { -moz-transform: skewY(0deg) skewX(30deg); }
+            100% { -moz-transform: skewY(0deg) skewX(0deg); }
+        }
+
+        @keyframes inclinarAlternado {
+            0%   { transform: skewY(0deg) skewX(0deg); }
+            25%  { transform: skewY(30deg) skewX(0deg); }
+            50%  { transform: skewY(0deg) skewX(0deg); }
+            75%  { transform: skewY(0deg) skewX(30deg); }
+            100% { transform: skewY(0deg) skewX(0deg); }
+        }
+
+        .boton-regresar {
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>5.10 Inclinación alternada (arriba/abajo y derecha/izquierda)</h2>
+
+        <div class="box">
+            <div class="textbox">Inclinar texto</div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 5.11</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #galeria {
+            position: relative;
+            width: 250px;
+            height: 330px;
+            margin: 30px auto;
+        }
+
+        #galeria img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 330px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            -webkit-transition-property: opacity;
+            -moz-transition-property: opacity;
+            transition-property: opacity;
+            -webkit-transition-duration: 3s;
+            -moz-transition-duration: 3s;
+            transition-duration: 3s;
+            -webkit-transition-timing-function: linear;
+            -moz-transition-timing-function: linear;
+            transition-timing-function: linear;
+        }
+
+        #galeria img:hover {
+            opacity: 0;
+        }
+
+        .boton-regresar {
+            margin-top: 40px;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>5.11 Fusión de 5 imágenes con transiciones</h2>
+        <p>Pasa el cursor sobre la imagen para revelar gradualmente la siguiente capa.</p>
+
+        <div id="galeria">
+            <img src="foto1.png" alt="Imagen base (capa 1)" style="z-index: 1;">
+            <img src="foto2.png" alt="Capa 2" style="z-index: 2;">
+            <img src="foto3.png" alt="Capa 3" style="z-index: 3;">
+            <img src="foto4.png" alt="Capa 4" style="z-index: 4;">
+            <img src="foto5.png" alt="Capa 5 (superior)" style="z-index: 5;">
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

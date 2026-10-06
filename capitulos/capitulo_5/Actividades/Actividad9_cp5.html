@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 5.9</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .area-animacion {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 40px auto;
+            border: 2px dashed #bbb;
+            border-radius: 8px;
+        }
+
+        .objeto-movil {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: royalblue;
+            border-radius: 6px;
+            -webkit-animation: cuadrado 4s infinite linear;
+            -moz-animation: cuadrado 4s infinite linear;
+            animation: cuadrado 4s infinite linear;
+        }
+
+        @-webkit-keyframes cuadrado {
+            0%   { top: 0px;   left: 0px; }
+            25%  { top: 0px;   left: 250px; }
+            50%  { top: 250px; left: 250px; }
+            75%  { top: 250px; left: 0px; }
+            100% { top: 0px;   left: 0px; }
+        }
+
+        @-moz-keyframes cuadrado {
+            0%   { top: 0px;   left: 0px; }
+            25%  { top: 0px;   left: 250px; }
+            50%  { top: 250px; left: 250px; }
+            75%  { top: 250px; left: 0px; }
+            100% { top: 0px;   left: 0px; }
+        }
+
+        @keyframes cuadrado {
+            0%   { top: 0px;   left: 0px; }
+            25%  { top: 0px;   left: 250px; }
+            50%  { top: 250px; left: 250px; }
+            75%  { top: 250px; left: 0px; }
+            100% { top: 0px;   left: 0px; }
+        }
+
+        .boton-regresar {
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>5.9 Animación en patrón cuadrado</h2>
+
+        <div class="area-animacion">
+            <div class="objeto-movil"></div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
