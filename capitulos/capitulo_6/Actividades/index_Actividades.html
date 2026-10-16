@@ -2,89 +2,116 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Índice de Actividades - Capítulo 6</title>
+    <title>Actividades - Capítulo 6</title>
     <style type="text/css">
         body {
             font-family: Arial, Helvetica, sans-serif;
-            margin: 40px;
-            background-color: #f8f9fa;
+            margin: 0;
+            padding: 40px;
+            background-color: #f0f4f8;
             color: #333;
         }
 
         .contenedor {
-            max-width: 700px;
+            width: 100%;
+            max-width: 1100px;
             margin: 0 auto;
-            background: #ffffff;
-            padding: 30px 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            text-align: center;
         }
 
         .contenedor h1 {
-            color: #1a365d;
+            color: #2b5b84;
             margin-top: 0;
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-        }
-
-        .lista-actividades {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 12px;
-            padding: 0;
-            list-style: none;
-        }
-
-        .lista-actividades a {
-            display: block;
-            background-color: #0b69a3;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 2.2rem;
             font-weight: bold;
-            font-size: 0.95rem;
-            transition: background-color 0.2s ease, transform 0.1s ease;
         }
 
-        .lista-actividades a:hover {
-            background-color: #084d77;
-            transform: translateY(-2px);
+        .linea-separadora {
+            border: none;
+            border-top: 2px solid #2b5b84;
+            margin-bottom: 30px;
+        }
+
+        .grid-actividades {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .grid-actividades a {
+            display: block;
+            background-color: #ffffff;
+            color: #0b69a3;
+            text-decoration: none;
+            padding: 14px 18px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            font-size: 1.05rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            box-sizing: border-box;
+        }
+
+        .grid-actividades a:hover {
+            background-color: #f8fafc;
+            border-color: #0b69a3;
+        }
+
+        .boton-regresar a button {
+            background-color: #6c757d;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .boton-regresar a button:hover {
+            background-color: #5a6268;
         }
     </style>
 </head>
 <body>
 
     <div class="contenedor">
-        <h1>Actividades Capítulo 6</h1>
+        <h1>Actividades - Capítulo 6</h1>
+        <hr class="linea-separadora">
 
-        <ul class="lista-actividades">
-            <li><a href="Actividad1_cp6.html">Actividad 1</a></li>
-            <li><a href="Actividad2_cp6.html">Actividad 2</a></li>
-            <li><a href="Actividad3_cp6.html">Actividad 3</a></li>
-            <li><a href="Actividad4_cp6.html">Actividad 4</a></li>
-            <li><a href="Actividad5_cp6.html">Actividad 5</a></li>
-            <li><a href="Actividad6_cp6.html">Actividad 6</a></li>
-            <li><a href="Actividad7_cp6.html">Actividad 7</a></li>
-            <li><a href="Actividad8_cp6.html">Actividad 8</a></li>
-            <li><a href="Actividad9_cp6.html">Actividad 9</a></li>
-            <li><a href="Actividad10_cp6.html">Actividad 10</a></li>
-            <li><a href="Actividad11_cp6.html">Actividad 11</a></li>
-            <li><a href="Actividad12_cp6.html">Actividad 12</a></li>
-            <li><a href="Actividad13_cp6.html">Actividad 13</a></li>
-            <li><a href="Actividad14_cp6.html">Actividad 14</a></li>
-            <li><a href="Actividad15_cp6.html">Actividad 15</a></li>
-            <li><a href="Actividad16_cp6.html">Actividad 16</a></li>
-            <li><a href="Actividad17_cp6.html">Actividad 17</a></li>
-            <li><a href="Actividad18_cp6.html">Actividad 18</a></li>
-            <li><a href="Actividad19_cp6.html">Actividad 19</a></li>
-            <li><a href="Actividad20_cp6.html">Actividad 20</a></li>
-            <li><a href="Actividad21_cp6.html">Actividad 21</a></li>
-            <li><a href="Actividad22_cp6.html">Actividad 22</a></li>
-            <li><a href="Actividad23_cp6.html">Actividad 23</a></li>
-            <li><a href="Actividad24_cp6.html">Actividad 24</a></li>
-        </ul>
+        <div class="grid-actividades">
+            <a href="Actividad1_cp6.html">Actividad 1 (Ejercicio 6.1)</a>
+            <a href="Actividad2_cp6.html">Actividad 2 (Ejercicio 6.2)</a>
+            <a href="Actividad3_cp6.html">Actividad 3 (Ejercicio 6.3)</a>
+            <a href="Actividad4_cp6.html">Actividad 4 (Ejercicio 6.4)</a>
+            <a href="Actividad5_cp6.html">Actividad 5 (Ejercicio 6.5)</a>
+            <a href="Actividad6_cp6.html">Actividad 6 (Ejercicio 6.6)</a>
+            <a href="Actividad7_cp6.html">Actividad 7 (Ejercicio 6.7)</a>
+            <a href="Actividad8_cp6.html">Actividad 8 (Ejercicio 6.8)</a>
+            <a href="Actividad9_cp6.html">Actividad 9 (Ejercicio 6.9)</a>
+            <a href="Actividad10_cp6.html">Actividad 10 (Ejercicio 6.10)</a>
+            <a href="Actividad11_cp6.html">Actividad 11 (Ejercicio 6.11)</a>
+            <a href="Actividad12_cp6.html">Actividad 12 (Ejercicio 6.12)</a>
+            <a href="Actividad13_cp6.html">Actividad 13 (Ejercicio 6.13)</a>
+            <a href="Actividad14_cp6.html">Actividad 14 (Ejercicio 6.14)</a>
+            <a href="Actividad15_cp6.html">Actividad 15 (Ejercicio 6.15)</a>
+            <a href="Actividad16_cp6.html">Actividad 16 (Ejercicio 6.16)</a>
+            <a href="Actividad17_cp6.html">Actividad 17 (Ejercicio 6.17)</a>
+            <a href="Actividad18_cp6.html">Actividad 18 (Ejercicio 6.18)</a>
+            <a href="Actividad19_cp6.html">Actividad 19 (Ejercicio 6.19)</a>
+            <a href="Actividad20_cp6.html">Actividad 20 (Ejercicio 6.20)</a>
+            <a href="Actividad21_cp6.html">Actividad 21 (Ejercicio 6.21)</a>
+            <a href="Actividad22_cp6.html">Actividad 22 (Ejercicio 6.22)</a>
+            <a href="Actividad23_cp6.html">Actividad 23 (Ejercicio 6.23)</a>
+            <a href="Actividad24_cp6.html">Actividad 24 (Ejercicio 6.24)</a>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="../index_cp6.html">
+                <button type="button">Regresar al Capítulo 6</button>
+            </a>
+        </div>
     </div>
 
 </body>

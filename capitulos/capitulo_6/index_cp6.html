@@ -2,71 +2,120 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Capítulo 6 - Menú Principal</title>
+    <title>Capítulo 6</title>
     <style type="text/css">
         body {
             font-family: Arial, Helvetica, sans-serif;
-            margin: 40px;
-            background-color: #f8f9fa;
-            color: #333;
+            margin: 0;
+            padding: 40px;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
         }
 
         .contenedor {
+            width: 100%;
             max-width: 600px;
-            margin: 0 auto;
             background: #ffffff;
-            padding: 30px 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             text-align: center;
         }
 
         .contenedor h1 {
-            color: #1a365d;
+            color: #2b5b84;
             margin-top: 0;
-            margin-bottom: 25px;
-            font-size: 2rem;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+
+        .linea-separadora {
+            border: none;
+            border-top: 2px solid #2b5b84;
+            margin-bottom: 35px;
         }
 
         .opciones {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 15px;
             padding: 0;
+            margin: 0 0 35px 0;
             list-style: none;
+        }
+
+        .opciones li {
+            width: 65%;
         }
 
         .opciones a {
             display: block;
-            background-color: #0b69a3;
-            color: #ffffff;
+            background-color: #ffffff;
+            color: #0b69a3;
             text-decoration: none;
-            padding: 16px 20px;
-            border-radius: 8px;
+            padding: 12px 20px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
             font-weight: bold;
             font-size: 1.1rem;
-            transition: background-color 0.2s ease, transform 0.1s ease;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .opciones a:hover {
-            background-color: #084d77;
-            transform: translateY(-2px);
+            background-color: #f8fafc;
+            border-color: #0b69a3;
+        }
+
+        .linea-inferior {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin-bottom: 25px;
+        }
+
+        .boton-regresar a button {
+            background-color: #6c757d;
+            color: #ffffff;
+            border: none;
+            padding: 10px 30px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .boton-regresar a button:hover {
+            background-color: #5a6268;
         }
     </style>
 </head>
 <body>
 
     <div class="contenedor">
-        <h1>Capítulo 6: JavaScript</h1>
+        <h1>Capítulo 6</h1>
+        <hr class="linea-separadora">
 
         <ul class="opciones">
             <li>
-                <a href="Actividades/index_Actividades.html">Ver Actividades</a>
+                <a href="Actividades/index_Actividades.html">Actividades</a>
             </li>
             <li>
-                <a href="Ejemplos/index_Ejemplos.html">Ver Ejemplos</a>
+                <a href="Ejemplos/index_Ejemplos.html">Ejemplos</a>
             </li>
         </ul>
+
+        <hr class="linea-inferior">
+
+        <div class="boton-regresar">
+            <a href="../index.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
     </div>
 
 </body>
