@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 8 - Ejercicio 7.8</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 750px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .descripcion {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .codigo-error {
+            background-color: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 10px 15px;
+            margin: 8px 0 20px 0;
+            border-radius: 0 6px 6px 0;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95rem;
+            color: #c53030;
+        }
+
+        .respuesta-caja {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 18px;
+            margin-top: 8px;
+            border-radius: 0 6px 6px 0;
+            line-height: 1.6;
+        }
+
+        .respuesta-caja strong {
+            color: #1a365d;
+        }
+
+        .codigo-correcto {
+            display: block;
+            margin-top: 8px;
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+            color: #0b69a3;
+            white-space: pre;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 8 (Ejercicio 7.8)</h2>
+
+        <div class="descripcion">
+            ¿Qué está mal en la siguiente instrucción de repetición <strong>while</strong>?[cite: 20]
+        </div>
+
+        <div class="codigo-error">
+while ( z &gt;= 0 )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;suma += z;
+        </div>
+
+        <div class="respuesta-caja">
+            <strong>Explicación del error:</strong> El valor de la variable de control <code style="color:#0b69a3;">z</code> nunca disminuye ni cambia dentro del cuerpo del ciclo <code style="color:#0b69a3;">while</code>[cite: 20]. Si <code style="color:#0b69a3;">z</code> es mayor o igual a 0 al inicio, la condición siempre será verdadera y el ciclo se ejecutará de forma infinita (ciclo infinito)[cite: 20].<br><br>
+            <strong>Código corregido (ejemplo decrementando z):</strong>
+            <span class="codigo-correcto">while ( z &gt;= 0 ) {
+    suma += z;
+    z--; // Se decrementa z para evitar el ciclo infinito
+}</span>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

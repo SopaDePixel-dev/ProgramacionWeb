@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 20 - Ejercicio 7.20</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .tarjeta-resultado {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+        }
+
+        .tarjeta-resultado p {
+            margin: 8px 0;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .es-palindromo {
+            color: #2b6cb0;
+            font-weight: bold;
+            font-size: 1.15rem;
+            margin-top: 10px;
+        }
+
+        .no-palindromo {
+            color: #c53030;
+            font-weight: bold;
+            font-size: 1.15rem;
+            margin-top: 10px;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 20 (Ejercicio 7.20)</h2>
+
+        <script type="text/javascript">
+            var numero;
+            var esValido = false;
+
+            while (!esValido) {
+                var entrada = window.prompt("Ingrese un número entero de 5 dígitos:", "12321");
+                
+                if (entrada !== null) {
+                    numero = parseInt(entrada);
+
+                    // Verifica que sea un número entero y contenga exactamente 5 dígitos
+                    if (!isNaN(numero) && numero >= 10000 && numero <= 99999) {
+                        esValido = true;
+                    } else {
+                        window.alert("El número ingresado no es de cinco dígitos. Por favor, intente nuevamente.");
+                    }
+                } else {
+                    break;
+                }
+            }
+
+            if (esValido) {
+                // Separación de dígitos utilizando división y residuo
+                var d1 = Math.floor(numero / 10000);
+                var d2 = Math.floor((numero % 10000) / 1000);
+                var d3 = Math.floor((numero % 1000) / 100);
+                var d4 = Math.floor((numero % 100) / 10);
+                var d5 = numero % 10;
+
+                document.writeln("<div class='tarjeta-resultado'>");
+                document.writeln("<p><strong>Número evaluado:</strong> " + numero + "</p>");
+
+                // Comparación de extremos (d1 con d5) y segundos dígitos (d2 con d4)
+                if (d1 === d5 && d2 === d4) {
+                    document.writeln("<p class='es-palindromo'>¡El número es un palíndromo!</p>");
+                } else {
+                    document.writeln("<p class='no-palindromo'>El número NO es un palíndromo.</p>");
+                }
+
+                document.writeln("</div>");
+            } else {
+                document.writeln("<div class='tarjeta-resultado'>");
+                document.writeln("<p>Operación cancelada o no se introdujo un número válido.</p>");
+                document.writeln("</div>");
+            }
+        </script>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

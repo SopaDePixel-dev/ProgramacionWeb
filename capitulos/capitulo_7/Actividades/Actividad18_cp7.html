@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 18 - Ejercicio 7.18</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 750px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .descripcion {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .respuesta-caja {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.6;
+        }
+
+        .respuesta-caja strong {
+            color: #1a365d;
+        }
+
+        .salida-codigo {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 12px 18px;
+            margin-top: 10px;
+            border-radius: 6px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.1rem;
+            color: #1a365d;
+            letter-spacing: 2px;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 18 (Ejercicio 7.18)</h2>
+
+        <div class="descripcion">
+            Determinación del resultado generado por la secuencia de comandos misteriosa[cite: 20]:
+        </div>
+
+        <div class="respuesta-caja">
+            <strong>Explicación:</strong> El script recorre 10 filas (de 10 a 1) y en cada fila imprime 10 caracteres mediante un ciclo anidado[cite: 20]. Si la fila es impar (<code style="color:#0b69a3;">fila % 2 == 1</code>) imprime el carácter <code style="color:#0b69a3;">&lt;</code>[cite: 20]; de lo contrario (si es par), imprime <code style="color:#0b69a3;">&gt;</code>[cite: 20]. Como comienza en la fila 10 (par) e intercala hasta la fila 1, produce un patrón alternado de 10 filas de 10 caracteres cada una[cite: 20].<br><br>
+            
+            <strong>Salida impresa en la página:</strong>
+            <div class="salida-codigo">
+                &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+                &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>
+                &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+                &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>
+                &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+                &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>
+                &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+                &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>
+                &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+                &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

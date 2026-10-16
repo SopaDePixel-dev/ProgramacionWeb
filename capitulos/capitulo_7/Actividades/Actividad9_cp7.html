@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9 - Ejercicio 7.9</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 750px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .descripcion {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .pregunta {
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .codigo-error {
+            background-color: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 10px 15px;
+            margin: 8px 0;
+            border-radius: 0 6px 6px 0;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95rem;
+            color: #c53030;
+            white-space: pre-wrap;
+        }
+
+        .respuesta-caja {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 12px 18px;
+            margin-top: 8px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .respuesta-caja strong {
+            color: #1a365d;
+        }
+
+        .codigo-correcto {
+            display: block;
+            margin-top: 8px;
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+            color: #0b69a3;
+            white-space: pre;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9 (Ejercicio 7.9)</h2>
+
+        <div class="descripcion">
+            Identificación y corrección de errores en los siguientes segmentos de código[cite: 20]:
+        </div>
+
+        <!-- Inciso A -->
+        <div class="pregunta">
+            <strong>a)</strong>
+            <div class="codigo-error">if ( edad &gt;= 65 );
+    document.writeln( "Edad es mayor o igual que 65" );
+else
+    document.writeln( "Edad es menor que 65" );</div>
+            <div class="respuesta-caja">
+                <strong>Error:</strong> Hay un punto y coma <code style="color:#c53030;">;</code> incorrecto al final de la condición del <code style="color:#c53030;">if</code>[cite: 20], lo que hace que el bloque sea una instrucción nula y desconecta el <code style="color:#c53030;">else</code> provocado un error de sintaxis[cite: 20]. También hay un punto y coma <code style="color:#c53030;">;</code> fuera de las comillas en la última instrucción[cite: 20].<br><br>
+                <strong>Código corregido:</strong>
+                <span class="codigo-correcto">if ( edad &gt;= 65 )
+    document.writeln( "Edad es mayor o igual que 65" );
+else
+    document.writeln( "Edad es menor que 65" );</span>
+            </div>
+        </div>
+
+        <!-- Inciso B -->
+        <div class="pregunta">
+            <strong>b)</strong>
+            <div class="codigo-error">var x = 1, total;
+while ( x &lt;= 10 )
+{
+    total += x;
+    ++x;
+}</div>
+            <div class="respuesta-caja">
+                <strong>Error:</strong> La variable <code style="color:#c53030;">total</code> no está inicializada[cite: 20]. Al intentar realizar <code style="color:#c53030;">total += x</code>, su valor resultará en <code style="color:#c53030;">NaN</code>[cite: 20].<br><br>
+                <strong>Código corregido:</strong>
+                <span class="codigo-correcto">var x = 1, total = 0;
+while ( x &lt;= 10 )
+{
+    total += x;
+    ++x;
+}</span>
+            </div>
+        </div>
+
+        <!-- Inciso C -->
+        <div class="pregunta">
+            <strong>c)</strong>
+            <div class="codigo-error">var x = 1;
+var total = 0;
+while ( x &lt;= 100 )
+    total += x;
+    ++x;</div>
+            <div class="respuesta-caja">
+                <strong>Error:</strong> Faltan las llaves <code style="color:#c53030;">{ }</code> para agrupar las instrucciones del ciclo <code style="color:#c53030;">while</code>[cite: 20]. Sin llaves, solo <code style="color:#c53030;">total += x</code> pertenece al ciclo, lo que provoca un ciclo infinito al no incrementarse <code style="color:#c53030;">x</code> dentro de él[cite: 20].<br><br>
+                <strong>Código corregido:</strong>
+                <span class="codigo-correcto">var x = 1;
+var total = 0;
+while ( x &lt;= 100 )
+{
+    total += x;
+    ++x;
+}</span>
+            </div>
+        </div>
+
+        <!-- Inciso D -->
+        <div class="pregunta">
+            <strong>d)</strong>
+            <div class="codigo-error">var y = 5;
+while ( y &gt; 0 )
+{
+    document.writeln( y );
+    ++y;
+}</div>
+            <div class="respuesta-caja">
+                <strong>Error:</strong> La variable <code style="color:#c53030;">y</code> se está incrementando (<code style="color:#c53030;">++y</code>) en lugar de decrementarse (<code style="color:#c53030;">--y</code>)[cite: 20], provocando un ciclo infinito ya que <code style="color:#c53030;">y</code> siempre será mayor que 0[cite: 20].<br><br>
+                <strong>Código corregido:</strong>
+                <span class="codigo-correcto">var y = 5;
+while ( y &gt; 0 )
+{
+    document.writeln( y );
+    --y;
+}</span>
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

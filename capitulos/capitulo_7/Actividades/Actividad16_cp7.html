@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 16 - Ejercicio 7.16</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #cbd5e1;
+        }
+
+        th {
+            background-color: #2b5b84;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        td {
+            padding: 8px;
+            text-align: center;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 16 (Ejercicio 7.16)</h2>
+
+        <script type="text/javascript">
+            document.writeln("<table>");
+            document.writeln("<thead>");
+            document.writeln("<tr><th>N</th><th>10*N</th><th>100*N</th><th>1000*N</th></tr>");
+            document.writeln("</thead>");
+            document.writeln("<tbody>");
+
+            var n = 1;
+            while (n <= 6) {
+                document.writeln("<tr>");
+                document.writeln("<td>" + n + "</td>");
+                document.writeln("<td>" + (10 * n) + "</td>");
+                document.writeln("<td>" + (100 * n) + "</td>");
+                document.writeln("<td>" + (1000 * n) + "</td>");
+                document.writeln("</tr>");
+                n++;
+            }
+
+            document.writeln("</tbody>");
+            document.writeln("</table>");
+        </script>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

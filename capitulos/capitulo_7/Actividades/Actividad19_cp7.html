@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 19 - Ejercicio 7.19</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 750px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .descripcion {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .pregunta {
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .respuesta-caja {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            margin-top: 10px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .respuesta-caja strong {
+            color: #1a365d;
+        }
+
+        .salida-codigo {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 10px 15px;
+            margin-top: 8px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+            color: #0b69a3;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 19 (Ejercicio 7.19)</h2>
+
+        <div class="descripcion">
+            Determinación de la salida para el problema del <strong>else suelto</strong> según las condiciones de variables[cite: 20]:
+        </div>
+
+        <!-- Inciso A -->
+        <div class="pregunta">
+            <strong>a) Análisis del segmento A:</strong>
+            <div class="respuesta-caja">
+                <strong>Caso 1: x = 9, y = 11</strong>[cite: 20]
+                <div class="salida-codigo">
+                    *****<br>
+                    $$$$$
+                </div>
+                <em>Explicación:</em> <code style="color:#0b69a3;">x &lt; 10</code> es verdadero, por lo que entra al segundo <code style="color:#0b69a3;">if</code>[cite: 20]. Como <code style="color:#0b69a3;">y &gt; 10</code> es verdadero, imprime <code style="color:#0b69a3;">*****</code>[cite: 20]. El <code style="color:#0b69a3;">else</code> pertenece al segundo <code style="color:#0b69a3;">if</code> y no se ejecuta[cite: 20]. Finalmente, la instrucción <code style="color:#0b69a3;">document.writeln("&lt;p&gt;$$$$$&lt;/p&gt;")</code> no está dentro de ningún bloque, por lo que se ejecuta siempre[cite: 20].<br><br>
+
+                <strong>Caso 2: x = 11, y = 9</strong>[cite: 20]
+                <div class="salida-codigo">
+                    $$$$$
+                </div>
+                <em>Explicación:</em> <code style="color:#0b69a3;">x &lt; 10</code> es falso, por lo que se omite todo el cuerpo del primer <code style="color:#0b69a3;">if</code> (incluyendo el segundo <code style="color:#0b69a3;">if</code> y su <code style="color:#0b69a3;">else</code>)[cite: 20]. Solo se ejecuta la instrucción exterior que imprime <code style="color:#0b69a3;">$$$$$</code>[cite: 20].
+            </div>
+        </div>
+
+        <!-- Inciso B -->
+        <div class="pregunta">
+            <strong>b) Análisis del segmento B:</strong>
+            <div class="respuesta-caja">
+                <strong>Caso 1: x = 9, y = 11</strong>[cite: 20]
+                <div class="salida-codigo">
+                    *****
+                </div>
+                <em>Explicación:</em> <code style="color:#0b69a3;">x &lt; 10</code> es verdadero, por lo que entra al bloque entre llaves[cite: 20]. Como <code style="color:#0b69a3;">y &gt; 10</code> es verdadero, imprime <code style="color:#0b69a3;">*****</code>[cite: 20]. El <code style="color:#0b69a3;">else</code> de la línea principal pertenece expresamente al primer <code style="color:#0b69a3;">if</code> (por el uso de llaves) y no se ejecuta[cite: 20].<br><br>
+
+                <strong>Caso 2: x = 11, y = 9</strong>[cite: 20]
+                <div class="salida-codigo">
+                    #####<br>
+                    $$$$$
+                </div>
+                <em>Explicación:</em> <code style="color:#0b69a3;">x &lt; 10</code> es falso, por lo que se ejecuta el bloque <code style="color:#0b69a3;">else</code> exterior[cite: 20], imprimiendo <code style="color:#0b69a3;">#####</code> y <code style="color:#0b69a3;">$$$$$</code>[cite: 20].
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

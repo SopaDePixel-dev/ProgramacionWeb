@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 21 - Ejercicio 7.21</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 750px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .descripcion {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .codigo-bloque {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95rem;
+            color: #0b69a3;
+            white-space: pre-wrap;
+            margin-bottom: 25px;
+        }
+
+        .respuesta-caja {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.6;
+        }
+
+        .respuesta-caja strong {
+            color: #1a365d;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 21 (Ejercicio 7.21)</h2>
+
+        <div class="descripcion">
+            Escriba una secuencia de comandos que muestre las potencias del entero 2 (2, 4, 8, 16, 32, 64, etc.) utilizando un ciclo infinito[cite: 21].
+        </div>
+
+        <div class="codigo-bloque">
+var potencia = 2;
+
+while ( true ) {
+    console.log( potencia );
+    potencia *= 2;
+}
+        </div>
+
+        <div class="respuesta-caja">
+            <strong>¿Qué ocurre cuando ejecuta este programa?</strong><br>
+            Al ejecutarse en un entorno como la consola del navegador, el ciclo entra en una repetición infinita que consume recursos de la CPU[cite: 21]. Conforme la variable <code style="color:#0b69a3;">potencia</code> se multiplica por 2 continuamente, supera el límite máximo numérico de precisión de JavaScript (<code style="color:#0b69a3;">Number.MAX_VALUE</code>) y comienza a imprimir <code style="color:#0b69a3;">Infinity</code>[cite: 21]. Finalmente, el navegador dejará de responder o mostrará una advertencia de "Página no responde" sugiriendo forzar el cierre de la pestaña[cite: 21].
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

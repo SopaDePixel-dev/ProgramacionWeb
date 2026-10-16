@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 12 - Ejercicio 7.12</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .tarjeta-cliente {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+        }
+
+        .tarjeta-cliente p {
+            margin: 8px 0;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .alerta-exceso {
+            color: #c53030;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .estado-ok {
+            color: #2b6cb0;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 12 (Ejercicio 7.12)</h2>
+
+        <script type="text/javascript">
+            var numeroCuenta;
+            var saldoInicial;
+            var cargos;
+            var creditos;
+            var limiteCredito;
+            var nuevoSaldo;
+
+            var entradaCuenta = window.prompt("Escriba el número de cuenta (-1 para salir):", "0");
+            numeroCuenta = parseInt(entradaCuenta);
+
+            while (numeroCuenta != -1) {
+                saldoInicial = parseInt(window.prompt("Escriba el saldo inicial:", "0"));
+                cargos = parseInt(window.prompt("Escriba el total de cargos del mes:", "0"));
+                creditos = parseInt(window.prompt("Escriba el total de créditos aplicados:", "0"));
+                limiteCredito = parseInt(window.prompt("Escriba el límite de crédito permitido:", "0"));
+
+                // Cálculo del nuevo saldo: saldo inicial + cargos - créditos
+                nuevoSaldo = saldoInicial + cargos - creditos;
+
+                document.writeln("<div class='tarjeta-cliente'>");
+                document.writeln("<p><strong>Número de cuenta:</strong> " + numeroCuenta + "</p>");
+                document.writeln("<p><strong>Límite de crédito:</strong> $" + limiteCredito + "</p>");
+                document.writeln("<p><strong>Nuevo saldo:</strong> $" + nuevoSaldo + "</p>");
+
+                if (nuevoSaldo > limiteCredito) {
+                    document.writeln("<p class='alerta-exceso'>Se excedió el límite de su crédito</p>");
+                } else {
+                    document.writeln("<p class='estado-ok'>Crédito dentro del límite permitido</p>");
+                }
+
+                document.writeln("</div>");
+
+                entradaCuenta = window.prompt("Escriba el número de cuenta (-1 para salir):", "0");
+                numeroCuenta = parseInt(entradaCuenta);
+            }
+        </script>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

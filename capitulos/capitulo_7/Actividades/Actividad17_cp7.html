@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 17 - Ejercicio 7.17</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .tarjeta-resultado {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+        }
+
+        .tarjeta-resultado p {
+            margin: 8px 0;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .numero-mayor {
+            color: #0b69a3;
+            font-weight: bold;
+            font-size: 1.15rem;
+            margin-top: 10px;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 17 (Ejercicio 7.17)</h2>
+
+        <script type="text/javascript">
+            var contador = 0;
+            var numero;
+            var mayor1 = Number.NEGATIVE_INFINITY;
+            var mayor2 = Number.NEGATIVE_INFINITY;
+            var entrada;
+
+            while (contador < 10) {
+                entrada = window.prompt("Ingrese el número " + (contador + 1) + " de 10:", "0");
+                numero = parseFloat(entrada);
+
+                if (!isNaN(numero)) {
+                    if (numero > mayor1) {
+                        mayor2 = mayor1;
+                        mayor1 = numero;
+                    } else if (numero > mayor2) {
+                        mayor2 = numero;
+                    }
+                    contador++;
+                } else {
+                    window.alert("Por favor, ingrese un número válido.");
+                }
+            }
+
+            document.writeln("<div class='tarjeta-resultado'>");
+            document.writeln("<p>Se han procesado los 10 números exitosamente.</p>");
+            document.writeln("<p class='numero-mayor'><strong>El número más grande (#1):</strong> " + mayor1 + "</p>");
+            document.writeln("<p class='numero-mayor'><strong>El segundo número más grande (#2):</strong> " + mayor2 + "</p>");
+            document.writeln("</div>");
+        </script>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

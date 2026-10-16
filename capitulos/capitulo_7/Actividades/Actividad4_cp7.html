@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 4 - Ejercicio 7.4</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 750px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .pregunta {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .codigo {
+            display: block;
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 10px 15px;
+            margin-top: 8px;
+            border-radius: 0 6px 6px 0;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.05rem;
+            color: #0b69a3;
+            font-weight: bold;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 4 (Ejercicio 7.4)</h2>
+
+        <div class="pregunta">
+            <strong>a)</strong> Declarar las variables <strong>suma</strong> y <strong>x</strong>.
+            <span class="codigo">var suma, x;</span>
+        </div>
+
+        <div class="pregunta">
+            <strong>b)</strong> Asignar 1 a la variable <strong>x</strong>.
+            <span class="codigo">x = 1;</span>
+        </div>
+
+        <div class="pregunta">
+            <strong>c)</strong> Asignar 0 a la variable <strong>suma</strong>.
+            <span class="codigo">suma = 0;</span>
+        </div>
+
+        <div class="pregunta">
+            <strong>d)</strong> Sumar la variable <strong>x</strong> a <strong>suma</strong> y asignar el resultado a la variable <strong>suma</strong>.
+            <span class="codigo">suma += x; // o suma = suma + x;</span>
+        </div>
+
+        <div class="pregunta">
+            <strong>e)</strong> Imprimir "La suma es: ", seguido del valor de la variable <strong>suma</strong>.
+            <span class="codigo">document.writeln("&lt;p&gt;La suma es: " + suma + "&lt;/p&gt;");</span>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

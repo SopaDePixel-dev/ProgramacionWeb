@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo 4 - Capítulo 7</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .contenedor h3 {
+            color: #2b5b84;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .contenedor p {
+            color: #333;
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Ejemplo 4 (Figura 7.14)</h2>
+
+        <script type="text/javascript">
+            var c;
+
+            c = 5;
+            document.writeln("<h3>Postincremento</h3>");
+            document.writeln("<p>" + c); // imprime 5
+            // imprime 5 y luego incrementa
+            document.writeln(" " + c++);
+            document.writeln(" " + c + "</p>"); // imprime 6
+
+            c = 5;
+            document.writeln("<h3>Preincremento</h3>");
+            document.writeln("<p>" + c); // imprime 5
+            // incrementa y luego imprime 6
+            document.writeln(" " + ++c);
+            document.writeln(" " + c + "</p>"); // imprime 6
+        </script>
+
+        <div class="boton-regresar">
+            <a href="index_Ejemplos.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

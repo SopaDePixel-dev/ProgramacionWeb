@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 23 - Ejercicio 7.23</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .tarjeta-resultado {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+        }
+
+        .tarjeta-resultado p {
+            margin: 8px 0;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .numero-descifrado {
+            color: #0b69a3;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 23 (Ejercicio 7.23)</h2>
+
+        <script type="text/javascript">
+            var entrada = window.prompt("Ingrese el número cifrado de cuatro dígitos:", "0189");
+            
+            if (entrada !== null && entrada.length === 4 && !isNaN(parseInt(entrada))) {
+                // Separación de los 4 dígitos del número cifrado
+                var d1 = parseInt(entrada.charAt(0));
+                var d2 = parseInt(entrada.charAt(1));
+                var d3 = parseInt(entrada.charAt(2));
+                var d4 = parseInt(entrada.charAt(3));
+
+                // Deshacer el intercambio: volver a intercambiar 1º con 3º, y 2º con 4º
+                var temp1 = d1;
+                d1 = d3;
+                d3 = temp1;
+
+                var temp2 = d2;
+                d2 = d4;
+                d4 = temp2;
+
+                // Deshacer la operación (dígito + 7) % 10
+                // Sumar 3 y sacar módulo 10 revierte exactamente la suma de 7 módulo 10
+                d1 = (d1 + 3) % 10;
+                d2 = (d2 + 3) % 10;
+                d3 = (d3 + 3) % 10;
+                d4 = (d4 + 3) % 10;
+
+                var resultadoOriginal = "" + d1 + d2 + d3 + d4;
+
+                document.writeln("<div class='tarjeta-resultado'>");
+                document.writeln("<p><strong>Número cifrado recibido:</strong> " + entrada + "</p>");
+                document.writeln("<p class='numero-descifrado'><strong>Entero original descifrado:</strong> " + resultadoOriginal + "</p>");
+                document.writeln("</div>");
+            } else {
+                document.writeln("<div class='tarjeta-resultado'>");
+                document.writeln("<p>No se ingresó un número cifrado de cuatro dígitos válido.</p>");
+                document.writeln("</div>");
+            }
+        </script>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

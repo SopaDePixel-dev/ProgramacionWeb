@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 13 - Ejercicio 7.13</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .tarjeta-vendedor {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+        }
+
+        .tarjeta-vendedor p {
+            margin: 8px 0;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .monto-ingresos {
+            color: #0b69a3;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 13 (Ejercicio 7.13)</h2>
+
+        <script type="text/javascript">
+            var ventasBrutas = 0; // Total de ventas brutas
+            var cantidad; // Cantidad vendida de un artículo específico
+            var opcionArticulo; // Número de artículo seleccionado
+            var ingresosTotales; // Pago base + 9% de comisiones
+
+            // Precios de los artículos según la tabla
+            var precio1 = 239.99;
+            var precio2 = 129.75;
+            var precio3 = 99.95;
+            var precio4 = 350.89;
+
+            var mensajeMenu = "Seleccione el número de artículo vendido (1 a 4) o -1 para finalizar:\n" +
+                              "Artículo 1: $239.99\n" +
+                              "Artículo 2: $129.75\n" +
+                              "Artículo 3: $99.95\n" +
+                              "Artículo 4: $350.89";
+
+            var entradaArticulo = window.prompt(mensajeMenu, "1");
+            opcionArticulo = parseInt(entradaArticulo);
+
+            while (opcionArticulo != -1) {
+                if (opcionArticulo >= 1 && opcionArticulo <= 4) {
+                    var entradaCantidad = window.prompt("Ingrese la cantidad vendida del Artículo " + opcionArticulo + ":", "1");
+                    cantidad = parseInt(entradaCantidad);
+
+                    if (!isNaN(cantidad) && cantidad > 0) {
+                        if (opcionArticulo == 1)
+                            ventasBrutas += precio1 * cantidad;
+                        else if (opcionArticulo == 2)
+                            ventasBrutas += precio2 * cantidad;
+                        else if (opcionArticulo == 3)
+                            ventasBrutas += precio3 * cantidad;
+                        else if (opcionArticulo == 4)
+                            ventasBrutas += precio4 * cantidad;
+                    }
+                } else {
+                    window.alert("Opción no válida. Introduzca un número de artículo de 1 a 4.");
+                }
+
+                entradaArticulo = window.prompt(mensajeMenu, "1");
+                opcionArticulo = parseInt(entradaArticulo);
+            }
+
+            // Pago base de $200 más el 9% de las ventas brutas
+            ingresosTotales = 200 + (ventasBrutas * 0.09);
+
+            document.writeln("<div class='tarjeta-vendedor'>");
+            document.writeln("<p><strong>Ventas brutas totales:</strong> $" + ventasBrutas.toFixed(2) + "</p>");
+            document.writeln("<p><strong>Sueldo base semanal:</strong> $200.00</p>");
+            document.writeln("<p><strong>Comisión (9%):</strong> $" + (ventasBrutas * 0.09).toFixed(2) + "</p>");
+            document.writeln("<p class='monto-ingresos'><strong>Ingresos totales del vendedor:</strong> $" + ingresosTotales.toFixed(2) + "</p>");
+            document.writeln("</div>");
+        </script>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
