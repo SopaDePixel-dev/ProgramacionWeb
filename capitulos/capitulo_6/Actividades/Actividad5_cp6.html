@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 5 - Ejercicio 6.5</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        ol {
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 16px;
+        }
+
+        strong {
+            color: #2b5b84;
+        }
+
+        pre {
+            background-color: #f1f5f9;
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            overflow-x: auto;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 0.95rem;
+            color: #1e293b;
+            margin-top: 6px;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 5 (Ejercicio 6.5)</h2>
+
+        <ol type="a">
+            <li>
+                Indique que una secuencia de comandos calculará el producto de tres enteros.
+                <pre>// Este programa calcula el producto de tres enteros</pre>
+            </li>
+            <li>
+                Declare las variables <code>x</code>, <code>y</code>, <code>z</code> y <code>resultado</code>.
+                <pre>var x, y, z, resultado;</pre>
+            </li>
+            <li>
+                Declare las variables <code>xVal</code>, <code>yVal</code> y <code>zVal</code>.
+                <pre>var xVal, yVal, zVal;</pre>
+            </li>
+            <li>
+                Pida al usuario que introduzca el primer valor, lea el valor del usuario y almacénelo en la variable <code>xVal</code>.
+                <pre>xVal = window.prompt("Escriba el primer entero:");</pre>
+            </li>
+            <li>
+                Pida al usuario que introduzca el segundo valor, lea el valor del usuario y almacénelo en la variable <code>yVal</code>.
+                <pre>yVal = window.prompt("Escriba el segundo entero:");</pre>
+            </li>
+            <li>
+                Pida al usuario que introduzca el tercer valor, lea el valor del usuario y almacénelo en la variable <code>zVal</code>.
+                <pre>zVal = window.prompt("Escriba el tercer entero:");</pre>
+            </li>
+            <li>
+                Convierta la cadena <code>xVal</code> en un entero y almacene el resultado en la variable <code>x</code>.
+                <pre>x = parseInt(xVal);</pre>
+            </li>
+            <li>
+                Convierta la cadena <code>yVal</code> en un entero y almacene el resultado en la variable <code>y</code>.
+                <pre>y = parseInt(yVal);</pre>
+            </li>
+            <li>
+                Convierta la cadena <code>zVal</code> en un entero y almacene el resultado en la variable <code>z</code>.
+                <pre>z = parseInt(zVal);</pre>
+            </li>
+            <li>
+                Calcule el producto de los tres enteros contenidos en las variables <code>x</code>, <code>y</code> y <code>z</code>, y asigne el resultado a la variable <code>resultado</code>.
+                <pre>resultado = x * y * z;</pre>
+            </li>
+            <li>
+                Escriba una línea de texto de HTML5 que contenga la cadena "El producto es" seguida del valor de la variable <code>resultado</code>.
+                <pre>document.writeln("&lt;h1&gt;El producto es " + resultado + "&lt;/h1&gt;");</pre>
+            </li>
+        </ol>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

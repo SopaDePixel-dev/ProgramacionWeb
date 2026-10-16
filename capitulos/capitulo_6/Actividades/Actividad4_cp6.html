@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 4 - Ejercicio 6.4</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        ol {
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        strong {
+            color: #2b5b84;
+        }
+
+        pre {
+            background-color: #f1f5f9;
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            overflow-x: auto;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 0.95rem;
+            color: #1e293b;
+            margin-top: 8px;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 4 (Ejercicio 6.4)</h2>
+
+        <ol type="a">
+            <li>
+                <strong>Error:</strong> Hay un punto y coma (<code>;</code>) al final de la condición del <code>if</code>, lo que hace que la instrucción sea nula y la alerta se ejecute incondicionalmente.
+                <br>
+                <strong>Corrección:</strong>
+                <pre>if (c &lt; 7)
+    window.alert("c es menor que 7");</pre>
+            </li>
+            <li>
+                <strong>Error:</strong> El operador relacional está escrito al revés (<code>=&gt;</code> no existe en este contexto para comparación; el operador correcto es <code>&gt;=</code>).
+                <br>
+                <strong>Corrección:</strong>
+                <pre>if (c &gt;= 7)
+    window.alert("c es igual o mayor que 7");</pre>
+            </li>
+        </ol>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

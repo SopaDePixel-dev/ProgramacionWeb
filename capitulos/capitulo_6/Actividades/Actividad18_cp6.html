@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 18 - Ejercicio 6.18</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 18 (Ejercicio 6.18)</h2>
+
+        <script type="text/javascript">
+            var entrada1, entrada2, entrada3;
+            var n1, n2, n3;
+            var suma, promedio, producto, menor, mayor;
+
+            entrada1 = window.prompt("Escriba el primer entero:");
+            entrada2 = window.prompt("Escriba el segundo entero:");
+            entrada3 = window.prompt("Escriba el tercer entero:");
+
+            n1 = parseInt(entrada1);
+            n2 = parseInt(entrada2);
+            n3 = parseInt(entrada3);
+
+            suma = n1 + n2 + n3;
+            promedio = suma / 3;
+            producto = n1 * n2 * n3;
+
+            menor = n1;
+            if (n2 < menor)
+                menor = n2;
+            if (n3 < menor)
+                menor = n3;
+
+            mayor = n1;
+            if (n2 > mayor)
+                mayor = n2;
+            if (n3 > mayor)
+                mayor = n3;
+
+            window.alert("Suma: " + suma +
+                         "\nPromedio: " + promedio +
+                         "\nProducto: " + producto +
+                         "\nMenor: " + menor +
+                         "\nMayor: " + mayor);
+        </script>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

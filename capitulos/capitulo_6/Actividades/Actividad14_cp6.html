@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 14 - Ejercicio 6.14</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        ol {
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        strong {
+            color: #2b5b84;
+        }
+
+        pre {
+            background-color: #f1f5f9;
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            overflow-x: auto;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 0.95rem;
+            color: #1e293b;
+            margin-top: 6px;
+        }
+
+        .boton-regresar {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 14 (Ejercicio 6.14)</h2>
+
+        <ol type="a">
+            <li>
+                <code>x = 7 + 3 * 6 / 2 - 1;</code>
+                <p><strong>Orden de evaluación:</strong></p>
+                <ol>
+                    <li><code>3 * 6</code> = 18</li>
+                    <li><code>18 / 2</code> = 9</li>
+                    <li><code>7 + 9</code> = 16</li>
+                    <li><code>16 - 1</code> = 15</li>
+                    <li>Asignación a <code>x</code></li>
+                </ol>
+                <p><strong>Valor final de x:</strong> <code>15</code></p>
+            </li>
+            <li>
+                <code>x = 2 % 2 + 2 * 2 - 2 / 2;</code>
+                <p><strong>Orden de evaluación:</strong></p>
+                <ol>
+                    <li><code>2 % 2</code> = 0</li>
+                    <li><code>2 * 2</code> = 4</li>
+                    <li><code>2 / 2</code> = 1</li>
+                    <li><code>0 + 4</code> = 4</li>
+                    <li><code>4 - 1</code> = 3</li>
+                    <li>Asignación a <code>x</code></li>
+                </ol>
+                <p><strong>Valor final de x:</strong> <code>3</code></p>
+            </li>
+            <li>
+                <code>x = ( 3 * 9 * ( 3 + ( 9 * 3 / ( 3 ) ) ) );</code>
+                <p><strong>Orden de evaluación:</strong></p>
+                <ol>
+                    <li>Paréntesis interno <code>(3)</code> = 3</li>
+                    <li><code>9 * 3</code> = 27</li>
+                    <li><code>27 / 3</code> = 9</li>
+                    <li><code>3 + 9</code> = 12</li>
+                    <li><code>3 * 9</code> = 27</li>
+                    <li><code>27 * 12</code> = 324</li>
+                    <li>Asignación a <code>x</code></li>
+                </ol>
+                <p><strong>Valor final de x:</strong> <code>324</code></p>
+            </li>
+        </ol>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
