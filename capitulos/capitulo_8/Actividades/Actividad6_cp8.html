@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 6 - Ejercicio 8.6</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .reactivo {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .reactivo p {
+            margin: 5px 0 10px 0;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .enunciado {
+            font-weight: bold;
+            color: #1a365d;
+        }
+
+        .resultado {
+            color: #0b69a3;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .bloque-salida {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            margin-top: 15px;
+        }
+
+        .boton-regresar {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 6 (Ejercicio 8.6)</h2>
+
+        <div class="reactivo">
+            <p class="enunciado">Determinar el menor de varios enteros no negativos:</p>
+            
+            <div class="bloque-salida">
+                <script type="text/javascript">
+                    var cantidad = parseInt(window.prompt("¿Cuántos números enteros no negativos va a ingresar?", "3"));
+                    var menor;
+                    var numero;
+
+                    if (isNaN(cantidad) || cantidad <= 0) {
+                        document.writeln("<p style='color: #c53030; font-weight: bold;'>Por favor, ingrese una cantidad válida mayor a 0.</p>");
+                    } else {
+                        // Leer el primer valor para inicializar el menor
+                        numero = parseInt(window.prompt("Ingrese el número 1 de " + cantidad + ":", "0"));
+                        menor = numero;
+
+                        // Leer los valores restantes y comparar
+                        for (var i = 2; i <= cantidad; ++i) {
+                            numero = parseInt(window.prompt("Ingrese el número " + i + " de " + cantidad + ":", "0"));
+                            if (numero < menor) {
+                                menor = numero;
+                            }
+                        }
+
+                        document.writeln("<p class='resultado'>El número menor de los " + cantidad + " ingresados es: " + menor + "</p>");
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

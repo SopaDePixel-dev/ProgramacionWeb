@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 7 - Ejercicio 8.7</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .reactivo {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .reactivo p {
+            margin: 5px 0 10px 0;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .enunciado {
+            font-weight: bold;
+            color: #1a365d;
+        }
+
+        .resultado {
+            color: #0b69a3;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .bloque-salida {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            margin-top: 15px;
+        }
+
+        .boton-regresar {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 7 (Ejercicio 8.7)</h2>
+
+        <div class="reactivo">
+            <p class="enunciado">Producto de los enteros impares del 1 al 15:</p>
+            
+            <div class="bloque-salida">
+                <script type="text/javascript">
+                    var producto = 1;
+
+                    for (var i = 1; i <= 15; i += 2) {
+                        producto *= i;
+                    }
+
+                    document.writeln("<p class='resultado'>El producto de los enteros impares del 1 al 15 es: " + producto + "</p>");
+                </script>
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

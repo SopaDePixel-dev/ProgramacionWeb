@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 13 - Ejercicio 8.13</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .reactivo {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .reactivo p {
+            margin: 5px 0 10px 0;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .enunciado {
+            font-weight: bold;
+            color: #1a365d;
+        }
+
+        .bloque-salida {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            margin-top: 15px;
+        }
+
+        ul {
+            margin: 5px 0 15px 20px;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        li {
+            color: #333;
+        }
+
+        .valor-final {
+            color: #0b69a3;
+            font-weight: bold;
+        }
+
+        .boton-regresar {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 13 (Ejercicio 8.13)</h2>
+
+        <div class="reactivo">
+            <p class="enunciado">Análisis de la instrucción switch con k = 1, 2, 3, 4 y 10:</p>
+            
+            <p>A continuación se evalúa el valor asignado a <code>x</code> tras ejecutar la estructura <code>switch(k)</code>:</p>
+
+            <ul>
+                <li>Si <strong>k = 1</strong>: El caso 1 ejecuta <code>break</code> de inmediato[cite: 23]. <code>k</code> se mantiene en 1[cite: 23]. &rarr; <span class="valor-final">x = 1</span></li>
+                <li>Si <strong>k = 2</strong>: Cae a través al caso 3 (<em>fall-through</em>)[cite: 23], incrementa <code>k</code> a 3[cite: 23] y ejecuta <code>break</code>[cite: 23]. &rarr; <span class="valor-final">x = 3</span></li>
+                <li>Si <strong>k = 3</strong>: Ejecuta el caso 3[cite: 23], incrementa <code>k</code> a 4[cite: 23] y ejecuta <code>break</code>[cite: 23]. &rarr; <span class="valor-final">x = 4</span></li>
+                <li>Si <strong>k = 4</strong>: Ejecuta el caso 4[cite: 23], decrementa <code>k</code> a 3[cite: 23] y ejecuta <code>break</code>[cite: 23]. &rarr; <span class="valor-final">x = 3</span></li>
+                <li>Si <strong>k = 10</strong>: Entra a <code>default</code>[cite: 23], multiplica <code>k</code> por 3 (10 * 3)[cite: 23]. &rarr; <span class="valor-final">x = 30</span></li>
+            </ul>
+
+            <div class="bloque-salida">
+                <p><strong>Demostración interactiva en tiempo de ejecución:</strong></p>
+                <script type="text/javascript">
+                    function evaluarSwitch(k) {
+                        var x;
+                        switch (k) {
+                            case 1:
+                                break;
+                            case 2:
+                            case 3:
+                                ++k;
+                                break;
+                            case 4:
+                                --k;
+                                break;
+                            default:
+                                k *= 3;
+                        }
+                        x = k;
+                        return x;
+                    }
+
+                    var valores = [1, 2, 3, 4, 10];
+                    for (var i = 0; i < valores.length; i++) {
+                        var valK = valores[i];
+                        document.writeln("<p>Para k = " + valK + " &rarr; <strong>x = " + evaluarSwitch(valK) + "</strong></p>");
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

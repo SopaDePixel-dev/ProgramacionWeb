@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 8 - Ejercicio 8.8</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 700px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .reactivo {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .reactivo p {
+            margin: 5px 0 10px 0;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .enunciado {
+            font-weight: bold;
+            color: #1a365d;
+        }
+
+        .bloque-salida {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            margin-top: 15px;
+            max-height: 450px;
+            overflow-y: auto;
+        }
+
+        table {
+            width: 320px;
+            border-collapse: collapse;
+            background-color: lightblue;
+            margin: 15px auto;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+            padding: 5px;
+            font-size: 0.95rem;
+        }
+
+        th {
+            text-align: left;
+            color: white;
+            background-color: darkblue;
+        }
+
+        tr.filaimpar {
+            background-color: white;
+        }
+
+        caption {
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #1a365d;
+        }
+
+        .boton-regresar {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 8 (Ejercicio 8.8)</h2>
+
+        <div class="reactivo">
+            <p class="enunciado">Cálculo del interés compuesto para tasas del 5% al 10%:</p>
+            
+            <div class="bloque-salida">
+                <script type="text/javascript">
+                    var monto;
+                    var principal = 1000.00;
+
+                    // Ciclo for para variar la tasa de interés del 5% al 10% (0.05 a 0.10)
+                    for (var tasaPorcentaje = 5; tasaPorcentaje <= 10; ++tasaPorcentaje) {
+                        var tasa = tasaPorcentaje / 100.0;
+
+                        document.writeln("<table>");
+                        document.writeln("<caption>Tasa de inter&eacute;s del " + tasaPorcentaje + "%</caption>");
+                        document.writeln("<thead><tr><th>A&ntilde;o</th><th>Monto en dep&oacute;sito</th></tr></thead><tbody>");
+
+                        for (var anio = 1; anio <= 10; ++anio) {
+                            monto = principal * Math.pow(1.0 + tasa, anio);
+
+                            if (anio % 2 !== 0) {
+                                document.writeln("<tr class='filaimpar'><td>" + anio + "</td><td>" + monto.toFixed(2) + "</td></tr>");
+                            } else {
+                                document.writeln("<tr><td>" + anio + "</td><td>" + monto.toFixed(2) + "</td></tr>");
+                            }
+                        }
+
+                        document.writeln("</tbody></table>");
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

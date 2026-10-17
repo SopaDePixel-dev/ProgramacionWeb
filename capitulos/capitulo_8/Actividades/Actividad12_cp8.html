@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 12 - Ejercicio 8.12</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .reactivo {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .reactivo p {
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+
+        .enunciado {
+            font-weight: bold;
+            color: #1a365d;
+        }
+
+        .resultado {
+            color: #0b69a3;
+            font-weight: bold;
+        }
+
+        .boton-regresar {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 12 (Ejercicio 8.12)</h2>
+
+        <div class="reactivo">
+            <p class="enunciado">Valores iniciales: i = 1, j = 2, k = 3, m = 2</p>
+            <p><strong>¿Son necesarios los paréntesis internos en cada expresión?</strong><br>
+            No, no son necesarios ningún par de paréntesis internos adicionales debido a la precedencia de operadores en JavaScript (los operadores aritméticos y relacionales se evalúan antes que los operadores lógicos). Sin embargo, los paréntesis principales que envuelven la llamada a <code>document.writeln(...)</code> son obligatorios por sintaxis de función.</p>
+        </div>
+
+        <div class="reactivo">
+            <p class="enunciado">a) document.writeln( i == 1 );</p>
+            <p class="resultado">Imprime: <script type="text/javascript">var i=1, j=2, k=3, m=2; document.write(i == 1);</script></p>
+        </div>
+
+        <div class="reactivo">
+            <p class="enunciado">b) document.writeln( j == 3 );</p>
+            <p class="resultado">Imprime: <script type="text/javascript">document.write(j == 3);</script></p>
+        </div>
+
+        <div class="reactivo">
+            <p class="enunciado">c) document.writeln( i &gt;= 1 &amp;&amp; j &lt; 4 );</p>
+            <p class="resultado">Imprime: <script type="text/javascript">document.write(i >= 1 && j < 4);</script></p>
+        </div>
+
+        <div class="reactivo">
+            <p class="enunciado">d) document.writeln( m &lt;= 99 &amp;&amp; k &lt; m );</p>
+            <p class="resultado">Imprime: <script type="text/javascript">document.write(m <= 99 && k < m);</script></p>
+        </div>
+
+        <div class="reactivo">
+            <p class="enunciado">e) document.writeln( j &gt;= i || k == m );</p>
+            <p class="resultado">Imprime: <script type="text/javascript">document.write(j >= i || k == m);</script></p>
+        </div>
+
+        <div class="reactivo">
+            <p class="enunciado">f) document.writeln( k + m &lt; j || 3 - j &gt;= k );</p>
+            <p class="resultado">Imprime: <script type="text/javascript">document.write(k + m < j || 3 - j >= k);</script></p>
+        </div>
+
+        <div class="reactivo">
+            <p class="enunciado">g) document.writeln( !( k &gt; m ) );</p>
+            <p class="resultado">Imprime: <script type="text/javascript">document.write(!(k > m));</script></p>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

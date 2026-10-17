@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 11 - Ejercicio 8.11</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .reactivo {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .reactivo p {
+            margin: 5px 0 10px 0;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .enunciado {
+            font-weight: bold;
+            color: #1a365d;
+        }
+
+        .bloque-salida {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            margin-top: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+        }
+
+        th {
+            background-color: #0b69a3;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .total {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #1a365d;
+            margin-top: 15px;
+            text-align: right;
+        }
+
+        .boton-regresar {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 11 (Ejercicio 8.11)</h2>
+
+        <div class="reactivo">
+            <p class="enunciado">Cálculo del total de ventas minoristas:</p>
+            
+            <div class="bloque-salida">
+                <script type="text/javascript">
+                    var producto;
+                    var cantidad;
+                    var totalVentas = 0;
+                    var precio;
+
+                    document.writeln("<table>");
+                    document.writeln("<thead><tr><th>Producto</th><th>Precio</th><th>Cantidad</th><th>Subtotal</th></tr></thead><tbody>");
+
+                    // Ciclo controlado por centinela (-1 para salir)
+                    producto = parseInt(window.prompt("Ingrese el número de producto (1-5) o -1 para terminar:", "1"));
+
+                    while (producto !== -1) {
+                        if (isNaN(producto) || producto < 1 || producto > 5) {
+                            alert("Número de producto inválido. Ingrese un valor entre 1 y 5 (o -1 para salir).");
+                        } else {
+                            cantidad = parseInt(window.prompt("Ingrese la cantidad vendida del producto " + producto + ":", "1"));
+
+                            if (isNaN(cantidad) || cantidad <= 0) {
+                                alert("Cantidad inválida.");
+                            } else {
+                                // switch para determinar el precio según el producto
+                                switch (producto) {
+                                    case 1: precio = 2.98; break;
+                                    case 2: precio = 4.50; break;
+                                    case 3: precio = 9.98; break;
+                                    case 4: precio = 4.49; break;
+                                    case 5: precio = 6.87; break;
+                                }
+
+                                var subtotal = precio * cantidad;
+                                totalVentas += subtotal;
+
+                                document.writeln("<tr><td>Producto " + producto + "</td><td>$" + precio.toFixed(2) + 
+                                                 "</td><td>" + cantidad + "</td><td>$" + subtotal.toFixed(2) + "</td></tr>");
+                            }
+                        }
+
+                        producto = parseInt(window.prompt("Ingrese el número de producto (1-5) o -1 para terminar:", "-1"));
+                    }
+
+                    document.writeln("</tbody></table>");
+                    document.writeln("<p class='total'>Valor total de ventas: $" + totalVentas.toFixed(2) + "</p>");
+                </script>
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

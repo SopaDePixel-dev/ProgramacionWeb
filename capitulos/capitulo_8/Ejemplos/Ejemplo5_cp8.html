@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo 5 - Capítulo 8</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #333333;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .salida-ejemplo {
+            margin: 25px 0;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .salida-ejemplo h1 {
+            font-size: 1.3rem;
+            color: #1a365d;
+            margin-bottom: 10px;
+        }
+
+        .salida-ejemplo ol {
+            padding-left: 25px;
+            color: #333;
+        }
+
+        .boton-regresar {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Ejemplo 5</h2>
+
+        <div class="salida-ejemplo">
+            <script type="text/javascript">
+                var seleccion; // la selección del usuario
+                var etiquetaInicial; // etiqueta de elemento de lista inicial
+                var etiquetaFinal; // etiqueta de elemento de lista final
+                var entradaValida = true; // true si la entrada es válida; false si no
+                var tipoLista; // tipo de lista como cadena
+
+                seleccion = window.prompt("Seleccione un estilo de lista:\n" +
+                    "1 (numerada), 2 (con letras), 3 (números romanos)", "1");
+
+                switch (seleccion) {
+                    case "1":
+                        etiquetaInicial = "<ol>";
+                        etiquetaFinal = "</ol>";
+                        tipoLista = "<h1>Lista numerada</h1>";
+                        break;
+                    case "2":
+                        etiquetaInicial = "<ol style='list-style-type: upper-alpha'>";
+                        etiquetaFinal = "</ol>";
+                        tipoLista = "<h1>Lista con letras</h1>";
+                        break;
+                    case "3":
+                        etiquetaInicial = "<ol style='list-style-type: upper-roman'>";
+                        etiquetaFinal = "</ol>";
+                        tipoLista = "<h1>Lista con números romanos</h1>";
+                        break;
+                    default:
+                        entradaValida = false;
+                        break;
+                } // fin de switch
+
+                if (entradaValida === true) {
+                    document.writeln(tipoLista + etiquetaInicial);
+
+                    for (var i = 1; i <= 3; ++i) {
+                        document.writeln("<li>Elemento de lista " + i + "</li>");
+                    }
+
+                    document.writeln(etiquetaFinal);
+                } // fin de if
+                else {
+                    document.writeln("<p style='color: #c53030; font-weight: bold;'>Selección inválida: " + seleccion + "</p>");
+                }
+            </script>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Ejemplos.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

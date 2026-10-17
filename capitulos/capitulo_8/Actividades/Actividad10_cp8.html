@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 10 - Ejercicio 8.10</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .reactivo {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .reactivo p {
+            margin: 5px 0 10px 0;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .enunciado {
+            font-weight: bold;
+            color: #1a365d;
+        }
+
+        .bloque-salida {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            margin-top: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+            line-height: 1.6;
+            color: #1a365d;
+        }
+
+        .estrofa {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .estrofa:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .linea-dia {
+            font-weight: bold;
+            color: #0b69a3;
+        }
+
+        .boton-regresar {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 10 (Ejercicio 8.10)</h2>
+
+        <div class="reactivo">
+            <p class="enunciado">Canción "Los Doce Días de Navidad":</p>
+            
+            <div class="bloque-salida">
+                <script type="text/javascript">
+                    for (var dia = 1; dia <= 12; ++dia) {
+                        document.writeln("<div class='estrofa'>");
+                        document.write("<p class='linea-dia'>On the ");
+
+                        // Primer switch: para seleccionar el ordinal del día
+                        switch (dia) {
+                            case 1:  document.write("first"); break;
+                            case 2:  document.write("second"); break;
+                            case 3:  document.write("third"); break;
+                            case 4:  document.write("fourth"); break;
+                            case 5:  document.write("fifth"); break;
+                            case 6:  document.write("sixth"); break;
+                            case 7:  document.write("seventh"); break;
+                            case 8:  document.write("eighth"); break;
+                            case 9:  document.write("ninth"); break;
+                            case 10: document.write("tenth"); break;
+                            case 11: document.write("eleventh"); break;
+                            case 12: document.write("twelfth"); break;
+                        }
+
+                        document.writeln(" day of Christmas my true love sent to me:</p>");
+
+                        // Segundo switch: aprovecha la caída a través (fall-through) sin 'break'
+                        switch (dia) {
+                            case 12: document.writeln("Twelve drummers drumming,<br>");
+                            case 11: document.writeln("Eleven pipers piping,<br>");
+                            case 10: document.writeln("Ten lords a-leaping,<br>");
+                            case 9:  document.writeln("Nine ladies dancing,<br>");
+                            case 8:  document.writeln("Eight maids a-milking,<br>");
+                            case 7:  document.writeln("Seven swans a-swimming,<br>");
+                            case 6:  document.writeln("Six geese a-laying,<br>");
+                            case 5:  document.writeln("Five golden rings,<br>");
+                            case 4:  document.writeln("Four calling birds,<br>");
+                            case 3:  document.writeln("Three French hens,<br>");
+                            case 2:  document.writeln("Two turtle doves,<br>And ");
+                            case 1:  document.writeln("A partridge in a pear tree.");
+                        }
+
+                        document.writeln("</div>");
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

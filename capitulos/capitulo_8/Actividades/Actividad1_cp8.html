@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 1 - Ejercicio 8.1</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .reactivo {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .reactivo p {
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+
+        .enunciado {
+            font-weight: bold;
+            color: #1a365d;
+        }
+
+        .respuesta {
+            color: #333;
+        }
+
+        .falso {
+            color: #c53030;
+            font-weight: bold;
+        }
+
+        .verdadero {
+            color: #2b6cb0;
+            font-weight: bold;
+        }
+
+        .boton-regresar {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 1 (Ejercicio 8.1)</h2>
+
+        <div class="reactivo">
+            <p class="enunciado">a) El caso default es requerido en la instrucción de selección switch.</p>
+            <p class="respuesta"><span class="falso">Falso.</span> El caso default es opcional, aunque se recomienda incluirlo para procesar valores no previstos.</p>
+        </div>
+
+        <div class="reactivo">
+            <p class="enunciado">b) La instrucción break es requerida en el último caso de una instrucción de selección switch.</p>
+            <p class="respuesta"><span class="falso">Falso.</span> La instrucción break no es estrictamente necesaria en el último caso (sea default u otro caso), ya que el flujo sale automáticamente del switch al terminar la estructura.</p>
+        </div>
+
+        <div class="reactivo">
+            <p class="enunciado">c) La expresión ( x &gt; y &amp;&amp; a &lt; b ) es verdadera si x &gt; y es verdadera, o si a &lt; b es verdadera.</p>
+            <p class="respuesta"><span class="falso">Falso.</span> El operador AND lógico (&amp;&amp;) requiere que ambas condiciones sean verdaderas simultáneamente para que la expresión completa sea verdadera.</p>
+        </div>
+
+        <div class="reactivo">
+            <p class="enunciado">d) Una expresión que contiene el operador || es verdadera si uno o ambos de sus operandos son verdaderos.</p>
+            <p class="respuesta"><span class="verdadero">Verdadero.</span> El operador OR lógico (||) produce true si al menos uno de sus operandos es verdadero.</p>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

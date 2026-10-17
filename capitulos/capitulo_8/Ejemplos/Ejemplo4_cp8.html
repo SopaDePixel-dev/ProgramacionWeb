@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo 4 - Capítulo 8</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #333333;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .salida-ejemplo {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        table {
+            width: 300px;
+            border-collapse: collapse;
+            background-color: lightblue;
+            margin: 0 auto;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+            padding: 4px;
+        }
+
+        th {
+            text-align: left;
+            color: white;
+            background-color: darkblue;
+        }
+
+        tr.filaimpar {
+            background-color: white;
+        }
+
+        caption {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .boton-regresar {
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Ejemplo 4</h2>
+
+        <div class="salida-ejemplo">
+            <script type="text/javascript">
+                var monto; // monto actual de dinero
+                var principal = 1000.00; // monto principal
+                var tasa = 0.05; // tasa de interés
+
+                document.writeln( "<table>" ); // comenzar la tabla
+                document.writeln(
+                   "<caption>C&aacute;lculo del inter&eacute;s compuesto</caption>" );
+                document.writeln(
+                   "<thead><tr><th>A&ntilde;o</th>" ); // encabezado de la columna del año
+                document.writeln(
+                   "<th>Monto en dep&oacute;sito</th>" ); // encabezado de la columna del monto
+                document.writeln( "</tr></thead><tbody>" );
+
+                // imprimir una fila de la tabla para cada año
+                for ( var anio = 1; anio <= 10; ++anio )
+                {
+                   monto = principal * Math.pow( 1.0 + tasa, anio );
+
+                   if ( anio % 2 !== 0 )
+                      document.writeln( "<tr class='filaimpar'><td>" + anio +
+                         "</td><td>" + monto.toFixed(2) + "</td></tr>" );
+                   else
+                      document.writeln( "<tr><td>" + anio +
+                         "</td><td>" + monto.toFixed(2) + "</td></tr>" );
+                } // fin de for
+
+                document.writeln( "</tbody></table>" );
+            </script>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Ejemplos.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
