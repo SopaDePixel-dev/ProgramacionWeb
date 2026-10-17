@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo 6 - Figura 9.7</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 550px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        .seccion-dados {
+            border: 2px dashed #0b69a3;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px auto;
+            max-width: 250px;
+        }
+
+        .seccion-dados p {
+            margin: 0 0 5px 0;
+            font-weight: bold;
+            color: #1a365d;
+        }
+
+        .dado-visual {
+            font-size: 3rem;
+            line-height: 1;
+            display: inline-block;
+            margin: 0 5px;
+            user-select: none;
+        }
+
+        .p-rojo {
+            color: #c53030;
+            font-weight: bold;
+            font-size: 1.05rem;
+            margin-top: 15px;
+        }
+
+        .grupo-botones {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-juego {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 8px 20px;
+            font-size: 0.95rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, opacity 0.2s ease;
+        }
+
+        .btn-juego:hover:not(:disabled) {
+            background-color: #084d77;
+        }
+
+        .btn-juego:disabled {
+            background-color: #cbd5e1;
+            color: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        .btn-regresar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        var dadosEmoji = {
+            0: "🎲",
+            1: "⚀",
+            2: "⚁",
+            3: "⚂",
+            4: "⚃",
+            5: "⚄",
+            6: "⚅"
+        };
+
+        var puntoDado1Img;
+        var puntoDado2Img;
+        var tiroDado1Img;
+        var tiroDado2Img;
+        var mensajes;
+        var botonJugar;
+        var botonTirar;
+        var tirodados;
+
+        var miPunto;
+        var valorDado1;
+        var valorDado2;
+
+        function iniciarJuego() {
+            tirodados = document.getElementById("tirodados");
+            puntoDado1Img = document.getElementById("puntoDado1");
+            puntoDado2Img = document.getElementById("puntoDado2");
+            tiroDado1Img = document.getElementById("tiroDado1");
+            tiroDado2Img = document.getElementById("tiroDado2");
+            mensajes = document.getElementById("mensajes");
+            botonJugar = document.getElementById("jugar");
+            botonTirar = document.getElementById("tirar");
+
+            botonTirar.disabled = true;
+            establecerImagen(puntoDado1Img, NaN);
+            establecerImagen(puntoDado2Img, NaN);
+            establecerImagen(tiroDado1Img, NaN);
+            establecerImagen(tiroDado2Img, NaN);
+
+            miPunto = 0;
+            primerTiro();
+        }
+
+        function primerTiro() {
+            var sumaDeDados = tirarDados();
+
+            switch (sumaDeDados) {
+                case 7: case 11:
+                    mensajes.innerHTML = "¡Ha ganado! Haga clic en Jugar para jugar de nuevo.";
+                    break;
+                case 2: case 3: case 12:
+                    mensajes.innerHTML = "Lo siento. Usted pierde. Haga clic en Jugar para jugar de nuevo.";
+                    break;
+                default:
+                    miPunto = sumaDeDados;
+                    establecerImagen(puntoDado1Img, valorDado1);
+                    establecerImagen(puntoDado2Img, valorDado2);
+                    mensajes.innerHTML = "Punto establecido (" + miPunto + "). ¡Tire de nuevo!";
+                    botonTirar.disabled = false;
+                    botonJugar.disabled = true;
+                    break;
+            }
+        }
+
+        function tirarDeNuevo() {
+            var sumaDeDados = tirarDados();
+
+            if (sumaDeDados == miPunto) {
+                mensajes.innerHTML = "¡Ha ganado! Haga clic en Jugar para jugar de nuevo.";
+                botonTirar.disabled = true;
+                botonJugar.disabled = false;
+            } else if (sumaDeDados == 7) {
+                mensajes.innerHTML = "Lo siento. Usted pierde. Haga clic en Jugar para jugar de nuevo.";
+                botonTirar.disabled = true;
+                botonJugar.disabled = false;
+            }
+        }
+
+        function tirarDados() {
+            try {
+                tirodados.play();
+            } catch (e) {
+                // Si el navegador bloquea la reproducción automática de audio
+            }
+
+            valorDado1 = NaN;
+            valorDado2 = NaN;
+            mostrarDados();
+
+            valorDado1 = Math.floor(1 + Math.random() * 6);
+            valorDado2 = Math.floor(1 + Math.random() * 6);
+            mostrarDados();
+
+            return valorDado1 + valorDado2;
+        }
+
+        function mostrarDados() {
+            establecerImagen(tiroDado1Img, valorDado1);
+            establecerImagen(tiroDado2Img, valorDado2);
+        }
+
+        function establecerImagen(imgDado, valorDado) {
+            if (isFinite(valorDado)) {
+                imgDado.innerHTML = dadosEmoji[valorDado];
+            } else {
+                imgDado.innerHTML = dadosEmoji[0];
+            }
+        }
+
+        function iniciar() {
+            var bJugar = document.getElementById("jugar");
+            bJugar.addEventListener("click", iniciarJuego, false);
+            var bTirar = document.getElementById("tirar");
+            bTirar.addEventListener("click", tirarDeNuevo, false);
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Ejemplo 6 (Figura 9.7)</h2>
+
+        <div class="bloque-salida">
+            <audio id="tirodados" preload="auto">
+                <source src="http://test.deitel.com/dicerolling.mp3" type="audio/mpeg">
+                <source src="http://test.deitel.com/dicerolling.ogg" type="audio/ogg">
+            </audio>
+
+            <div class="seccion-dados">
+                <p>El punto es:</p>
+                <span id="puntoDado1" class="dado-visual">🎲</span>
+                <span id="puntoDado2" class="dado-visual">🎲</span>
+            </div>
+
+            <div class="seccion-dados">
+                <p>Tiro actual:</p>
+                <span id="tiroDado1" class="dado-visual">🎲</span>
+                <span id="tiroDado2" class="dado-visual">🎲</span>
+            </div>
+
+            <form action="#">
+                <div class="grupo-botones">
+                    <input id="jugar" class="btn-juego" type="button" value="Jugar">
+                    <input id="tirar" class="btn-juego" type="button" value="Tirar" disabled>
+                </div>
+            </form>
+
+            <p id="mensajes" class="p-rojo">Haga clic en Jugar para iniciar el juego</p>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Ejemplos.html">
+                <button type="button" class="btn-regresar">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

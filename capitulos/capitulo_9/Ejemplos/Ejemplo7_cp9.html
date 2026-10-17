@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo 7 - Figura 9.8</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+        }
+
+        .contenedor-video {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background-color: #000;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            max-height: 320px;
+            display: block;
+        }
+
+        .texto-reglas {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .texto-reglas h4 {
+            margin-top: 0;
+            color: #1a365d;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Ejemplo 7 (Figura 9.8)</h2>
+
+        <div class="bloque-salida">
+            <div class="contenedor-video">
+                <video controls preload="metadata">
+                    <source src="Aprende a jugar Craps.mp4" type="video/mp4">
+                    Un jugador tira dos dados. Cada dado tiene seis caras que contienen uno, dos, tres, cuatro, cinco y seis puntos.
+                </video>
+            </div>
+
+            <div class="texto-reglas">
+                <h4>Reglas básicas del juego de Craps</h4>
+                <p>Un jugador tira dos dados. Cada dado tiene seis caras que contienen uno, dos, tres, cuatro, cinco y seis puntos, respectivamente. Se calcula la suma de los puntos en las dos caras superiores.</p>
+                <p>Si la suma es <strong>7 u 11</strong> en el primer lanzamiento, el jugador gana. Si la suma es <strong>2, 3 o 12</strong> (craps), el jugador pierde. Si la suma es <strong>4, 5, 6, 8, 9 o 10</strong>, esa suma se convierte en el "punto" del jugador. Para ganar, debe seguir tirando los dados hasta volver a sacar su punto antes de que salga un 7.</p>
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Ejemplos.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

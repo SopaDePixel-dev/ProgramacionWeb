@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo 4 - Figura 9.5</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 550px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        .bloque-salida ol {
+            margin: 20px 0 0 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .bloque-salida li {
+            display: inline-block;
+        }
+
+        /* Reemplazo de las imágenes por Emojis con estilo responsivo */
+        .dado-visual {
+            font-size: 4rem;
+            line-height: 1;
+            display: inline-block;
+            user-select: none;
+            transition: transform 0.15s ease;
+        }
+
+        .dado-visual.tirar {
+            transform: scale(1.1) rotate(15deg);
+        }
+
+        .boton-tirar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 22px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            font-weight: bold;
+        }
+
+        .boton-tirar:hover {
+            background-color: #084d77;
+        }
+
+        .boton-tirar:active {
+            transform: scale(0.96);
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        .btn-regresar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        // Diccionario de emojis para los dados
+        // 0 representa el estado inicial (en blanco/incógnita)
+        var dadosEmoji = {
+            0: "🎲", // Dado general / Blanco
+            1: "⚀", // Uno
+            2: "⚁", // Dos
+            3: "⚂", // Tres
+            4: "⚃", // Cuatro
+            5: "⚄", // Cinco
+            6: "⚅"  // Seis
+        };
+
+        var imagenDado1;
+        var imagenDado2;
+        var imagenDado3;
+        var imagenDado4;
+
+        function iniciar() {
+            var boton = document.getElementById("botonTirar");
+            boton.addEventListener("click", tirarDados, false);
+            
+            imagenDado1 = document.getElementById("dado1");
+            imagenDado2 = document.getElementById("dado2");
+            imagenDado3 = document.getElementById("dado3");
+            imagenDado4 = document.getElementById("dado4");
+        }
+
+        function tirarDados() {
+            establecerImagen(imagenDado1);
+            establecerImagen(imagenDado2);
+            establecerImagen(imagenDado3);
+            establecerImagen(imagenDado4);
+        }
+
+        function establecerImagen(imgDado) {
+            var valorDado = Math.floor(1 + Math.random() * 6);
+            
+            // Efecto rápido de animación al tirar
+            imgDado.classList.add("tirar");
+            setTimeout(function() {
+                imgDado.classList.remove("tirar");
+            }, 150);
+
+            // Cambia el emoji y el atributo alt para accesibilidad
+            imgDado.innerHTML = dadosEmoji[valorDado];
+            imgDado.setAttribute("aria-label", "imagen de un dado con " + valorDado + " punto(s)");
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Ejemplo 4 (Figura 9.5)</h2>
+
+        <div class="bloque-salida">
+            <form action="#">
+                <input id="botonTirar" class="boton-tirar" type="button" value="Tirar dados">
+            </form>
+            <ol>
+                <li><span id="dado1" class="dado-visual" aria-label="dado listo">🎲</span></li>
+                <li><span id="dado2" class="dado-visual" aria-label="dado listo">🎲</span></li>
+                <li><span id="dado3" class="dado-visual" aria-label="dado listo">🎲</span></li>
+                <li><span id="dado4" class="dado-visual" aria-label="dado listo">🎲</span></li>
+            </ol>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Ejemplos.html">
+                <button type="button" class="btn-regresar">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

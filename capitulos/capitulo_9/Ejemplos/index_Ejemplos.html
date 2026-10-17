@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplos - Capítulo 9</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        .contenedor-general {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #2b5b84;
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .linea-separadora {
+            border: none;
+            border-top: 2px solid #2b5b84;
+            margin-bottom: 35px;
+        }
+
+        .grid-ejemplos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .boton-ejemplo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 16px 20px;
+            background-color: #ffffff;
+            color: #1a5b8c;
+            text-decoration: none;
+            font-size: 1.05rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease;
+        }
+
+        .boton-ejemplo:hover {
+            background-color: #f8fafc;
+            border-color: #94a3b8;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .boton-regresar {
+            background-color: #6c757d;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .boton-regresar:hover {
+            background-color: #5a6268;
+        }
+
+        @media (max-width: 900px) {
+            .grid-ejemplos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .grid-ejemplos {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-general">
+        <h1>Ejemplos - Capítulo 9</h1>
+        <hr class="linea-separadora">
+
+        <div class="grid-ejemplos">
+            <a href="Ejemplo1_cp9.html" class="boton-ejemplo">Ejemplo 1 (Figura 9.2)</a>
+            <a href="Ejemplo2_cp9.html" class="boton-ejemplo">Ejemplo 2 (Figura 9.3)</a>
+            <a href="Ejemplo3_cp9.html" class="boton-ejemplo">Ejemplo 3 (Figura 9.4)</a>
+            <a href="Ejemplo4_cp9.html" class="boton-ejemplo">Ejemplo 4 (Figura 9.5)</a>
+            <a href="Ejemplo5_cp9.html" class="boton-ejemplo">Ejemplo 5 (Figura 9.6)</a>
+            <a href="Ejemplo6_cp9.html" class="boton-ejemplo">Ejemplo 6 (Figura 9.7)</a>
+            <a href="Ejemplo7_cp9.html" class="boton-ejemplo">Ejemplo 7 (Figura 9.8)</a>
+            <a href="Ejemplo8_cp9.html" class="boton-ejemplo">Ejemplo 8 (Figura 9.9)</a>
+            <a href="Ejemplo9_cp9.html" class="boton-ejemplo">Ejemplo 9 (Figura 9.12)</a>
+        </div>
+
+        <a href="../index_cp9.html" class="boton-regresar">Regresar al Capítulo 9</a>
+    </div>
+
+</body>
+</html>

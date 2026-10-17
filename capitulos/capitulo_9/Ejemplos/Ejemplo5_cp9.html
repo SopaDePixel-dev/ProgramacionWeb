@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo 5 - Figura 9.6</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        /* Contenedor de la cuadrícula de los 12 dados */
+        .contenedor-dados {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .dado-visual {
+            font-size: 2.8rem;
+            line-height: 1;
+            user-select: none;
+            transition: transform 0.15s ease;
+            display: inline-block;
+        }
+
+        .dado-visual.tirar {
+            transform: scale(1.15) rotate(10deg);
+        }
+
+        .boton-tirar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 22px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .boton-tirar:hover {
+            background-color: #084d77;
+        }
+
+        .boton-tirar:active {
+            transform: scale(0.96);
+        }
+
+        /* Estilo de la tabla de frecuencias */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            margin-top: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        table, td, th {
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+            font-size: 0.95rem;
+        }
+
+        th {
+            text-align: left;
+            color: white;
+            background-color: #0b69a3;
+        }
+
+        caption {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #1a365d;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        .btn-regresar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        var dadosEmoji = {
+            0: "🎲",
+            1: "⚀",
+            2: "⚁",
+            3: "⚂",
+            4: "⚃",
+            5: "⚄",
+            6: "⚅"
+        };
+
+        var frecuencia1 = 0;
+        var frecuencia2 = 0;
+        var frecuencia3 = 0;
+        var frecuencia4 = 0;
+        var frecuencia5 = 0;
+        var frecuencia6 = 0;
+        var totalDados = 0;
+
+        function iniciar() {
+            var boton = document.getElementById("botonTirar");
+            boton.addEventListener("click", tirarDados, false);
+        }
+
+        function tirarDados() {
+            var cara;
+
+            for (var i = 1; i <= 12; ++i) {
+                cara = Math.floor(1 + Math.random() * 6);
+                sumarTiros(cara);
+                establecerImagen(i, cara);
+                ++totalDados;
+            }
+
+            actualizarTablaFrecuencias();
+        }
+
+        function sumarTiros(cara) {
+            switch (cara) {
+                case 1: ++frecuencia1; break;
+                case 2: ++frecuencia2; break;
+                case 3: ++frecuencia3; break;
+                case 4: ++frecuencia4; break;
+                case 5: ++frecuencia5; break;
+                case 6: ++frecuencia6; break;
+            }
+        }
+
+        function establecerImagen(numeroDado, cara) {
+            var imgDado = document.getElementById("dado" + numeroDado);
+            
+            imgDado.classList.add("tirar");
+            setTimeout(function() {
+                imgDado.classList.remove("tirar");
+            }, 150);
+
+            imgDado.innerHTML = dadosEmoji[cara];
+            imgDado.setAttribute("aria-label", "dado con " + cara + " punto(s)");
+        }
+
+        function actualizarTablaFrecuencias() {
+            var divTabla = document.getElementById("divTablaFrecuencias");
+
+            divTabla.innerHTML = "<table>" +
+                "<caption>Frecuencias de tiro de los dados</caption>" +
+                "<thead><tr><th>Cara</th><th>Frecuencia</th><th>Porcentaje</th></tr></thead>" +
+                "<tbody>" +
+                "<tr><td>1</td><td>" + frecuencia1 + "</td><td>" + formatoPorcentaje(frecuencia1 / totalDados) + "%</td></tr>" +
+                "<tr><td>2</td><td>" + frecuencia2 + "</td><td>" + formatoPorcentaje(frecuencia2 / totalDados) + "%</td></tr>" +
+                "<tr><td>3</td><td>" + frecuencia3 + "</td><td>" + formatoPorcentaje(frecuencia3 / totalDados) + "%</td></tr>" +
+                "<tr><td>4</td><td>" + frecuencia4 + "</td><td>" + formatoPorcentaje(frecuencia4 / totalDados) + "%</td></tr>" +
+                "<tr><td>5</td><td>" + frecuencia5 + "</td><td>" + formatoPorcentaje(frecuencia5 / totalDados) + "%</td></tr>" +
+                "<tr><td>6</td><td>" + frecuencia6 + "</td><td>" + formatoPorcentaje(frecuencia6 / totalDados) + "%</td></tr>" +
+                "</tbody></table>";
+        }
+
+        function formatoPorcentaje(valor) {
+            valor *= 100;
+            return valor.toFixed(2);
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Ejemplo 5 (Figura 9.6)</h2>
+
+        <div class="bloque-salida">
+            <div class="contenedor-dados">
+                <span id="dado1" class="dado-visual">🎲</span>
+                <span id="dado2" class="dado-visual">🎲</span>
+                <span id="dado3" class="dado-visual">🎲</span>
+                <span id="dado4" class="dado-visual">🎲</span>
+                <span id="dado5" class="dado-visual">🎲</span>
+                <span id="dado6" class="dado-visual">🎲</span>
+                <span id="dado7" class="dado-visual">🎲</span>
+                <span id="dado8" class="dado-visual">🎲</span>
+                <span id="dado9" class="dado-visual">🎲</span>
+                <span id="dado10" class="dado-visual">🎲</span>
+                <span id="dado11" class="dado-visual">🎲</span>
+                <span id="dado12" class="dado-visual">🎲</span>
+            </div>
+
+            <form action="#">
+                <input id="botonTirar" class="boton-tirar" type="button" value="Tirar dados">
+            </form>
+
+            <div id="divTablaFrecuencias"></div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Ejemplos.html">
+                <button type="button" class="btn-regresar">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
