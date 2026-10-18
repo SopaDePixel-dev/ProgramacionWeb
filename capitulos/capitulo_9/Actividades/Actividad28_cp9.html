@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.28 - Craps con Apuestas</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        .info-saldo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #15803d;
+            margin-bottom: 15px;
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .seccion-dados {
+            border: 2px dashed #0b69a3;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px auto;
+            max-width: 250px;
+        }
+
+        .seccion-dados p {
+            margin: 0 0 5px 0;
+            font-weight: bold;
+            color: #1a365d;
+        }
+
+        .dado-visual {
+            font-size: 2.8rem;
+            line-height: 1;
+            display: inline-block;
+            margin: 0 5px;
+            user-select: none;
+        }
+
+        .form-apuesta {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .form-apuesta input[type="number"] {
+            width: 140px;
+            padding: 8px;
+            font-size: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .btn-juego {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 8px 18px;
+            font-size: 0.95rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            font-weight: bold;
+        }
+
+        .btn-juego:hover:not(:disabled) {
+            background-color: #084d77;
+        }
+
+        .btn-juego:disabled {
+            background-color: #cbd5e1;
+            color: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        .p-rojo {
+            color: #c53030;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 15px;
+            min-height: 24px;
+        }
+
+        .p-chatter {
+            color: #1a365d;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        .btn-regresar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        var dadosEmoji = { 0: "🎲", 1: "⚀", 2: "⚁", 3: "⚂", 4: "⚃", 5: "⚄", 6: "⚅" };
+
+        var saldoBanco = 1000;
+        var apuestaActual = 0;
+        var miPunto = 0;
+        var valorDado1, valorDado2;
+
+        function conversacionAleatoria() {
+            var opciones = [
+                "¿Así que se va a quedar en bancarrota?",
+                "¡Vamos, arriésguese!",
+                "¡Está teniendo éxito! ¡Ahora es momento de cambiar sus fichas!",
+                "¡Sienta la presión de la mesa!"
+            ];
+            var indice = Math.floor(Math.random() * opciones.length);
+            document.getElementById("pChatter").innerText = opciones[indice];
+        }
+
+        function iniciarJuego() {
+            var campoApuesta = document.getElementById("campoApuesta");
+            var apuesta = parseFloat(campoApuesta.value);
+            var pMensajes = document.getElementById("mensajes");
+
+            if (isNaN(apuesta) || apuesta <= 0 || apuesta > saldoBanco) {
+                pMensajes.innerText = "Por favor ingrese una apuesta válida (mayor a 0 y no mayor a su saldo).";
+                return;
+            }
+
+            apuestaActual = apuesta;
+            document.getElementById("campoApuesta").disabled = true;
+            document.getElementById("btnApostar").disabled = true;
+
+            establecerImagen("puntoDado1", NaN);
+            establecerImagen("puntoDado2", NaN);
+            miPunto = 0;
+
+            primerTiro();
+        }
+
+        function primerTiro() {
+            var suma = tirarDados();
+            var pMensajes = document.getElementById("mensajes");
+
+            switch (suma) {
+                case 7: case 11:
+                    saldoBanco += apuestaActual;
+                    actualizarSaldo();
+                    pMensajes.innerText = "¡Ha ganado $" + apuestaActual + "! Ingrese una nueva apuesta para continuar.";
+                    resetearApuesta();
+                    break;
+                case 2: case 3: case 12:
+                    saldoBanco -= apuestaActual;
+                    actualizarSaldo();
+                    if (saldoBanco <= 0) {
+                        pMensajes.innerHTML = "<span style='color: #c53030;'>¡Lo siento. Está en bancarrota!</span>";
+                    } else {
+                        pMensajes.innerText = "Lo siento, perdió $" + apuestaActual + ". Ingrese una nueva apuesta.";
+                        resetearApuesta();
+                    }
+                    break;
+                default:
+                    miPunto = suma;
+                    establecerImagen("puntoDado1", valorDado1);
+                    establecerImagen("puntoDado2", valorDado2);
+                    pMensajes.innerText = "Punto en " + miPunto + ". ¡Haga clic en Tirar!";
+                    document.getElementById("btnTirar").disabled = false;
+                    break;
+            }
+            conversacionAleatoria();
+        }
+
+        function tirarDeNuevo() {
+            var suma = tirarDados();
+            var pMensajes = document.getElementById("mensajes");
+
+            if (suma === miPunto) {
+                saldoBanco += apuestaActual;
+                actualizarSaldo();
+                pMensajes.innerText = "¡Salió el punto! ¡Ganó $" + apuestaActual + "! Ingrese una nueva apuesta.";
+                document.getElementById("btnTirar").disabled = true;
+                resetearApuesta();
+            } else if (suma === 7) {
+                saldoBanco -= apuestaActual;
+                actualizarSaldo();
+                document.getElementById("btnTirar").disabled = true;
+                if (saldoBanco <= 0) {
+                    pMensajes.innerHTML = "<span style='color: #c53030;'>¡Lo siento. Está en bancarrota!</span>";
+                } else {
+                    pMensajes.innerText = "¡Salió 7! Perdió $" + apuestaActual + ". Ingrese una nueva apuesta.";
+                    resetearApuesta();
+                }
+            } else {
+                pMensajes.innerText = "Suma: " + suma + ". El punto sigue en " + miPunto + ". ¡Tire de nuevo!";
+            }
+            conversacionAleatoria();
+        }
+
+        function tirarDados() {
+            valorDado1 = Math.floor(1 + Math.random() * 6);
+            valorDado2 = Math.floor(1 + Math.random() * 6);
+            establecerImagen("tiroDado1", valorDado1);
+            establecerImagen("tiroDado2", valorDado2);
+            return valorDado1 + valorDado2;
+        }
+
+        function establecerImagen(idElem, valor) {
+            var elem = document.getElementById(idElem);
+            if (isFinite(valor)) elem.innerText = dadosEmoji[valor];
+            else elem.innerText = dadosEmoji[0];
+        }
+
+        function actualizarSaldo() {
+            document.getElementById("divSaldo").innerText = "Saldo en Banco: $" + saldoBanco.toFixed(2);
+        }
+
+        function resetearApuesta() {
+            if (saldoBanco > 0) {
+                document.getElementById("campoApuesta").disabled = false;
+                document.getElementById("btnApostar").disabled = false;
+                document.getElementById("campoApuesta").value = "";
+                document.getElementById("campoApuesta").focus();
+            }
+        }
+
+        function iniciar() {
+            document.getElementById("btnApostar").addEventListener("click", iniciarJuego, false);
+            document.getElementById("btnTirar").addEventListener("click", tirarDeNuevo, false);
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.28</h2>
+
+        <div class="bloque-salida">
+            <div id="divSaldo" class="info-saldo">Saldo en Banco: $1000.00</div>
+
+            <div class="form-apuesta">
+                <input id="campoApuesta" type="number" min="1" step="any" placeholder="Apuesta ($)">
+                <input id="btnApostar" class="btn-juego" type="button" value="Apostar y Lanzar">
+                <input id="btnTirar" class="btn-juego" type="button" value="Tirar" disabled>
+            </div>
+
+            <div class="seccion-dados">
+                <p>El punto es:</p>
+                <span id="puntoDado1" class="dado-visual">🎲</span>
+                <span id="puntoDado2" class="dado-visual">🎲</span>
+            </div>
+
+            <div class="seccion-dados">
+                <p>Tiro actual:</p>
+                <span id="tiroDado1" class="dado-visual">🎲</span>
+                <span id="tiroDado2" class="dado-visual">🎲</span>
+            </div>
+
+            <p id="mensajes" class="p-rojo">Ingrese su apuesta para iniciar el juego.</p>
+            <p id="pChatter" class="p-chatter">¡Bienvenido a la mesa de Craps!</p>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button" class="btn-regresar">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

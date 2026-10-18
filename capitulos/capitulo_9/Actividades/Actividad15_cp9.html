@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.15 - Determinación de Números Pares</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 550px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        .btn-iniciar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 22px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .btn-iniciar:hover {
+            background-color: #084d77;
+        }
+
+        .lista-resultados {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: monospace;
+            text-align: left;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .lista-resultados p {
+            margin: 4px 0;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        .btn-regresar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        function procesarNumeros() {
+            var divResultados = document.getElementById("divResultados");
+            divResultados.innerHTML = ""; // Limpiar resultados anteriores
+
+            var entrada = window.prompt("Escriba un número entero (o ingrese -1 para terminar):", "0");
+            var numero = parseInt(entrada);
+
+            // Ciclo controlado por centinela (-1)
+            while (numero !== -1 && !isNaN(numero)) {
+                var par = esPar(numero);
+                var estado = par ? "<strong style='color: #15803d;'>true (es PAR)</strong>" : "<strong style='color: #c53030;'>false (es IMPAR)</strong>";
+                
+                divResultados.innerHTML += "<p>El número " + numero + " es: " + estado + "</p>";
+
+                entrada = window.prompt("Escriba otro número entero (o ingrese -1 para terminar):", "0");
+                numero = parseInt(entrada);
+            }
+
+            if (divResultados.innerHTML === "") {
+                divResultados.innerHTML = "<p style='color: #64748b;'>No se procesaron números.</p>";
+            }
+        }
+
+        function esPar(numero) {
+            return numero % 2 === 0;
+        }
+
+        function iniciar() {
+            var boton = document.getElementById("botonIniciar");
+            boton.addEventListener("click", procesarNumeros, false);
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.15</h2>
+
+        <div class="bloque-salida">
+            <p style="margin-top: 0; font-size: 0.95rem; color: #334155;">Haz clic en el botón para iniciar la secuencia de prompts. Ingresa <strong>-1</strong> para finalizar.</p>
+            <input id="botonIniciar" class="btn-iniciar" type="button" value="Iniciar Evaluación con Prompt">
+
+            <div id="divResultados" class="lista-resultados">Presione el botón para ingresar números.</div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button" class="btn-regresar">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

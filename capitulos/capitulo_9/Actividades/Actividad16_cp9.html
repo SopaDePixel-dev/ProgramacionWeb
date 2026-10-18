@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.16 - Separar Dígitos de un Entero</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        .btn-accion {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 22px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .btn-accion:hover {
+            background-color: #084d77;
+        }
+
+        .resultado-cuadro {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            color: #1a365d;
+            font-weight: bold;
+            letter-spacing: 2px;
+            min-height: 24px;
+            font-family: monospace;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        .btn-regresar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        function cocienteEntero(a, b) {
+            return Math.floor(a / b);
+        }
+
+        function residuoEntero(a, b) {
+            return a % b;
+        }
+
+        function mostrarDigitos(numero) {
+            var divisor = 1;
+            while (cocienteEntero(numero, divisor * 10) > 0) {
+                divisor *= 10;
+            }
+
+            var resultado = "";
+            var num = numero;
+
+            while (divisor >= 1) {
+                var digito = cocienteEntero(num, divisor);
+                resultado += digito + "  ";
+                num = residuoEntero(num, divisor);
+                divisor = cocienteEntero(divisor, 10);
+            }
+
+            return resultado;
+        }
+
+        function solicitarNumero() {
+            var entrada = window.prompt("Ingrese un número entero entre 1 y 99999:", "4562");
+            var num = parseInt(entrada);
+            var divResultado = document.getElementById("divResultado");
+
+            if (isNaN(num) || num < 1 || num > 99999) {
+                divResultado.innerHTML = "<span style='color: #c53030; font-size: 1rem; letter-spacing: normal;'>Por favor ingrese un número válido entre 1 y 99999.</span>";
+                return;
+            }
+
+            var digitosSeparados = mostrarDigitos(num);
+            divResultado.innerText = digitosSeparados;
+        }
+
+        function iniciar() {
+            var boton = document.getElementById("btnSolicitar");
+            boton.addEventListener("click", solicitarNumero, false);
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.16</h2>
+
+        <div class="bloque-salida">
+            <p style="margin-top: 0; font-size: 0.95rem; color: #334155;">Presiona el botón para ingresar un entero (1 - 99999) y mostrar sus dígitos separados por dos espacios.</p>
+            <input id="btnSolicitar" class="btn-accion" type="button" value="Ingresar Entero (Prompt)">
+
+            <div id="divResultado" class="resultado-cuadro">Esperando número...</div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button" class="btn-regresar">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

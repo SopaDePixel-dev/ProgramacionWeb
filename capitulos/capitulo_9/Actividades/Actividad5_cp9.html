@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.5 - Corrección de Errores</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .item-error {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #cbd5e1;
+        }
+
+        .item-error:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .item-error h4 {
+            margin: 0 0 8px 0;
+            color: #1a365d;
+        }
+
+        .codigo-malo {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            margin-bottom: 8px;
+        }
+
+        .codigo-bueno {
+            background: #dcfce7;
+            color: #166534;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            margin-bottom: 8px;
+        }
+
+        .explicacion {
+            color: #334155;
+            font-size: 0.9rem;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.5</h2>
+
+        <div class="bloque-salida">
+            <div class="item-error">
+                <h4>a) Definición de función con palabra clave incorrecta:</h4>
+                <div class="codigo-malo">Error: method g() { document.writeln("Dentro del método g"); }</div>
+                <div class="codigo-bueno">Solución: function g() { document.writeln("Dentro del método g"); }</div>
+                <p class="explicacion"><strong>Explicación:</strong> En JavaScript las funciones se definen con la palabra clave <code>function</code>, no con <code>method</code>.</p>
+            </div>
+
+            <div class="item-error">
+                <h4>b) Falta de instrucción de retorno en la función:</h4>
+                <div class="codigo-malo">Error: function suma(x, y) { var resultado; resultado = x + y; }</div>
+                <div class="codigo-bueno">Solución: function suma(x, y) { var resultado; resultado = x + y; return resultado; }</div>
+                <p class="explicacion"><strong>Explicación:</strong> Para devolver un valor calculado a quien llamó la función, se debe utilizar la instrucción <code>return</code>.</p>
+            </div>
+
+            <div class="item-error">
+                <h4>c) Parámetro o variable no declarada/redefinición:</h4>
+                <div class="codigo-malo">Error: function f( a ) { document.writeln( a ); }</div>
+                <div class="codigo-bueno">Solución: function f( a ) { document.writeln( a ); }</div>
+                <p class="explicacion"><strong>Explicación:</strong> La sintaxis de la función es válida. Sin embargo, si <code>f(a)</code> no recibe ningún argumento al invocarla, imprimirá <code>undefined</code>. Para evitarlo se debe pasar un valor al llamarla, o validar que <code>a</code> no sea indefinidad.</p>
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.21 - Lanzamiento de Monedas</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 550px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        .moneda-visual {
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 15px;
+            display: inline-block;
+            user-select: none;
+        }
+
+        .btn-lanzar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 22px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .btn-lanzar:hover {
+            background-color: #084d77;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table, td, th {
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: #0b69a3;
+            color: white;
+            text-align: left;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        .btn-regresar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        var conteoCaras = 0;
+        var conteoCruces = 0;
+
+        function arrojar() {
+            return Math.random() < 0.5; // true para cara, false para cruz
+        }
+
+        function lanzarMoneda() {
+            var esCara = arrojar();
+            var icono = document.getElementById("iconoMoneda");
+            var resultadoTexto = document.getElementById("textoResultado");
+
+            if (esCara) {
+                conteoCaras++;
+                icono.innerText = "🪙";
+                resultadoTexto.innerText = "¡Salió CARA!";
+            } else {
+                conteoCruces++;
+                icono.innerText = "🔱";
+                resultadoTexto.innerText = "¡Salió CRUZ!";
+            }
+
+            actualizarTabla();
+        }
+
+        function actualizarTabla() {
+            document.getElementById("cantCaras").innerText = conteoCaras;
+            document.getElementById("cantCruces").innerText = conteoCruces;
+            document.getElementById("cantTotal").innerText = conteoCaras + conteoCruces;
+        }
+
+        function iniciar() {
+            document.getElementById("btnLanzar").addEventListener("click", lanzarMoneda, false);
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.21</h2>
+
+        <div class="bloque-salida">
+            <div id="iconoMoneda" class="moneda-visual">🪙</div>
+            <div id="textoResultado" style="font-weight: bold; color: #1a365d; margin-bottom: 15px;">Presione el botón para lanzar la moneda</div>
+
+            <input id="btnLanzar" class="btn-lanzar" type="button" value="Lanzar Moneda">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lado</th>
+                        <th>Apariciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cara (true)</td>
+                        <td id="cantCaras">0</td>
+                    </tr>
+                    <tr>
+                        <td>Cruz (false)</td>
+                        <td id="cantCruces">0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td id="cantTotal"><strong>0</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button" class="btn-regresar">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

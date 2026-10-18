@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.11 - Generación de Rangos Aleatorios</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .item-rango {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-rango code {
+            color: #0b69a3;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .item-rango .valor-generado {
+            background: #e2e8f0;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #1a365d;
+        }
+
+        .btn-probar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 22px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn-probar:hover {
+            background-color: #084d77;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        function generarValores() {
+            var nA = Math.floor(1 + Math.random() * 2);
+            var nB = Math.floor(1 + Math.random() * 100);
+            var nC = Math.floor(Math.random() * 10);
+            var nD = Math.floor(1000 + Math.random() * 113);
+            var nE = Math.floor(-1 + Math.random() * 3);
+            var nF = Math.floor(-3 + Math.random() * 15);
+
+            document.getElementById("valA").innerText = nA;
+            document.getElementById("valB").innerText = nB;
+            document.getElementById("valC").innerText = nC;
+            document.getElementById("valD").innerText = nD;
+            document.getElementById("valE").innerText = nE;
+            document.getElementById("valF").innerText = nF;
+        }
+
+        function iniciar() {
+            var boton = document.getElementById("botonProbar");
+            boton.addEventListener("click", generarValores, false);
+            generarValores();
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.11</h2>
+
+        <div class="bloque-salida">
+            <input id="botonProbar" class="btn-probar" type="button" value="Generar Nuevos Valores Aleatorios">
+
+            <div class="item-rango">
+                <div>
+                    <strong>a) 1 ≤ n ≤ 2:</strong><br>
+                    <code>n = Math.floor(1 + Math.random() * 2);</code>
+                </div>
+                <div id="valA" class="valor-generado">-</div>
+            </div>
+
+            <div class="item-rango">
+                <div>
+                    <strong>b) 1 ≤ n ≤ 100:</strong><br>
+                    <code>n = Math.floor(1 + Math.random() * 100);</code>
+                </div>
+                <div id="valB" class="valor-generado">-</div>
+            </div>
+
+            <div class="item-rango">
+                <div>
+                    <strong>c) 0 ≤ n ≤ 9:</strong><br>
+                    <code>n = Math.floor(Math.random() * 10);</code>
+                </div>
+                <div id="valC" class="valor-generado">-</div>
+            </div>
+
+            <div class="item-rango">
+                <div>
+                    <strong>d) 1000 ≤ n ≤ 1112:</strong><br>
+                    <code>n = Math.floor(1000 + Math.random() * 113);</code>
+                </div>
+                <div id="valD" class="valor-generado">-</div>
+            </div>
+
+            <div class="item-rango">
+                <div>
+                    <strong>e) -1 ≤ n ≤ 1:</strong><br>
+                    <code>n = Math.floor(-1 + Math.random() * 3);</code>
+                </div>
+                <div id="valE" class="valor-generado">-</div>
+            </div>
+
+            <div class="item-rango">
+                <div>
+                    <strong>f) -3 ≤ n ≤ 11:</strong><br>
+                    <code>n = Math.floor(-3 + Math.random() * 15);</code>
+                </div>
+                <div id="valF" class="valor-generado">-</div>
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.2 - Alcance</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .bloque-salida ul {
+            margin: 0 0 15px 0;
+            padding-left: 20px;
+        }
+
+        .bloque-salida li {
+            margin-bottom: 8px;
+        }
+
+        .destacado {
+            color: #0b69a3;
+            font-weight: bold;
+        }
+
+        .resultados-cubo {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            border-radius: 6px;
+            max-height: 150px;
+            overflow-y: auto;
+            font-family: monospace;
+        }
+
+        .resultados-cubo p {
+            margin: 2px 0;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        var x;
+
+        function salida() {
+            var contenedorResultados = document.getElementById("resultados");
+            var htmlSalida = "";
+            for (x = 1; x <= 10; x++) {
+                htmlSalida += "<p>El cubo de " + x + " es " + cubo(x) + "</p>";
+            }
+            contenedorResultados.innerHTML = htmlSalida;
+        }
+
+        function cubo(y) {
+            return y * y * y;
+        }
+
+        window.addEventListener("load", salida, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.2</h2>
+
+        <div class="bloque-salida">
+            <h3>Análisis de alcance (figura 9.13):</h3>
+            <ul>
+                <li>a) <strong>La variable x:</strong> <span class="destacado">Alcance Global</span> (declarada fuera de las funciones).</li>
+                <li>b) <strong>La variable y:</strong> <span class="destacado">Alcance de Función / Local</span> (parámetro de la función <code>cubo</code>).</li>
+                <li>c) <strong>La función cubo:</strong> <span class="destacado">Alcance Global</span>.</li>
+                <li>d) <strong>La función salida:</strong> <span class="destacado">Alcance Global</span>.</li>
+            </ul>
+
+            <h3>Salida del programa:</h3>
+            <div id="resultados" class="resultados-cubo"></div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

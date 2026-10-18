@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.27 - Sistema CAI Avanzado</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        .grid-config {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-grupo label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #1a365d;
+            font-size: 0.9rem;
+        }
+
+        .form-grupo select, .form-grupo input[type="number"] {
+            width: 100%;
+            padding: 8px 10px;
+            font-size: 0.95rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .pregunta-titulo {
+            font-size: 1.4rem;
+            color: #1a365d;
+            font-weight: bold;
+            margin: 15px 0;
+            background: #ffffff;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .btn-responder {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 22px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .btn-responder:hover {
+            background-color: #084d77;
+        }
+
+        .mensaje-respuesta {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            min-height: 24px;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        .btn-regresar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        var num1;
+        var num2;
+        var respuestaCorrecta;
+
+        function obtenerLimitePorNivel(nivel) {
+            return Math.pow(10, nivel) - 1;
+        }
+
+        function generarNuevaPregunta() {
+            var nivel = parseInt(document.getElementById("selectNivel").value);
+            var tipoOperacion = parseInt(document.getElementById("selectTipo").value);
+            var maxVal = obtenerLimitePorNivel(nivel);
+            var minVal = Math.pow(10, nivel - 1);
+            if (nivel === 1) minVal = 1;
+
+            num1 = Math.floor(minVal + Math.random() * (maxVal - minVal + 1));
+            num2 = Math.floor(minVal + Math.random() * (maxVal - minVal + 1));
+
+            var opActual = tipoOperacion;
+            if (opActual === 5) {
+                opActual = Math.floor(1 + Math.random() * 4);
+            }
+
+            var simbolo = "";
+            switch (opActual) {
+                case 1: // Suma
+                    simbolo = "+";
+                    respuestaCorrecta = num1 + num2;
+                    break;
+                case 2: // Resta
+                    if (num1 < num2) { var temp = num1; num1 = num2; num2 = temp; }
+                    simbolo = "-";
+                    respuestaCorrecta = num1 - num2;
+                    break;
+                case 3: // Multiplicación
+                    simbolo = "×";
+                    respuestaCorrecta = num1 * num2;
+                    break;
+                case 4: // División
+                    respuestaCorrecta = num1;
+                    var producto = num1 * num2;
+                    num1 = producto;
+                    simbolo = "÷";
+                    break;
+            }
+
+            document.getElementById("divPregunta").innerText = "¿Cuánto es " + num1 + " " + simbolo + " " + num2 + "?";
+            document.getElementById("campoRespuesta").value = "";
+            document.getElementById("campoRespuesta").focus();
+        }
+
+        function obtenerMensajeCorrecto() {
+            var opcion = Math.floor(1 + Math.random() * 4);
+            switch (opcion) {
+                case 1: return "¡Muy bien!";
+                case 2: return "¡Excelente!";
+                case 3: return "¡Buen trabajo!";
+                case 4: return "¡Siga así!";
+            }
+        }
+
+        function obtenerMensajeIncorrecto() {
+            var opcion = Math.floor(1 + Math.random() * 4);
+            switch (opcion) {
+                case 1: return "No. Intente de nuevo.";
+                case 2: return "Equivocado. Trate una vez más.";
+                case 3: return "¡No se dé por vencido!";
+                case 4: return "No. Siga intentando.";
+            }
+        }
+
+        function verificarRespuesta() {
+            var campo = document.getElementById("campoRespuesta");
+            var resUsuario = parseFloat(campo.value);
+            var divMensaje = document.getElementById("divMensaje");
+
+            if (isNaN(resUsuario)) {
+                divMensaje.innerHTML = "<span style='color: #c53030;'>Escriba un número.</span>";
+                return;
+            }
+
+            if (resUsuario === respuestaCorrecta) {
+                divMensaje.innerHTML = "<span style='color: #15803d;'>" + obtenerMensajeCorrecto() + "</span>";
+                setTimeout(function() {
+                    divMensaje.innerText = "";
+                    generarNuevaPregunta();
+                }, 1200);
+            } else {
+                divMensaje.innerHTML = "<span style='color: #c53030;'>" + obtenerMensajeIncorrecto() + "</span>";
+                campo.value = "";
+                campo.focus();
+            }
+        }
+
+        function iniciar() {
+            document.getElementById("btnResponder").addEventListener("click", verificarRespuesta, false);
+            document.getElementById("selectNivel").addEventListener("change", generarNuevaPregunta, false);
+            document.getElementById("selectTipo").addEventListener("change", generarNuevaPregunta, false);
+            generarNuevaPregunta();
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.27</h2>
+
+        <div class="bloque-salida">
+            <div class="grid-config">
+                <div class="form-grupo">
+                    <label for="selectNivel">Nivel de Grado (Dígitos):</label>
+                    <select id="selectNivel">
+                        <option value="1">Nivel 1 (1 dígito)</option>
+                        <option value="2">Nivel 2 (2 dígitos)</option>
+                        <option value="3">Nivel 3 (3 dígitos)</option>
+                    </select>
+                </div>
+                <div class="form-grupo">
+                    <label for="selectTipo">Tipo de Problema:</label>
+                    <select id="selectTipo">
+                        <option value="1">1: Solo Suma</option>
+                        <option value="2">2: Solo Resta</option>
+                        <option value="3" selected>3: Solo Multiplicación</option>
+                        <option value="4">4: Solo División</option>
+                        <option value="5">5: Mezclar Todo al Azar</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="divPregunta" class="pregunta-titulo">Cargando problema...</div>
+
+            <form action="#" onsubmit="return false;">
+                <div style="margin-bottom: 15px;">
+                    <input id="campoRespuesta" type="number" step="any" placeholder="Tu respuesta" style="width: 100%; padding: 10px; font-size: 1.1rem; border: 1px solid #cbd5e1; border-radius: 6px; text-align: center; box-sizing: border-box;">
+                </div>
+                <input id="btnResponder" class="btn-responder" type="button" value="Enviar Respuesta">
+            </form>
+
+            <div id="divMensaje" class="mensaje-respuesta"></div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button" class="btn-regresar">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.12 - Conjuntos de Enteros Aleatorios</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .item-conjunto {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-conjunto code {
+            color: #0b69a3;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .item-conjunto .valor-generado {
+            background: #e2e8f0;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #1a365d;
+            font-size: 1.1rem;
+        }
+
+        .btn-probar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 22px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn-probar:hover {
+            background-color: #084d77;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        function generar() {
+            var valA = 2 + 2 * Math.floor(Math.random() * 5);
+            var valB = 3 + 2 * Math.floor(Math.random() * 5);
+            var valC = 6 + 4 * Math.floor(Math.random() * 5);
+
+            document.getElementById("resA").innerText = valA;
+            document.getElementById("resB").innerText = valB;
+            document.getElementById("resC").innerText = valC;
+        }
+
+        function iniciar() {
+            var boton = document.getElementById("botonGenerar");
+            boton.addEventListener("click", generar, false);
+            generar();
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.12</h2>
+
+        <div class="bloque-salida">
+            <input id="botonGenerar" class="btn-probar" type="button" value="Generar Números del Conjunto">
+
+            <div class="item-conjunto">
+                <div>
+                    <strong>a) {2, 4, 6, 8, 10}:</strong><br>
+                    <code>2 + 2 * Math.floor(Math.random() * 5)</code>
+                </div>
+                <div id="resA" class="valor-generado">-</div>
+            </div>
+
+            <div class="item-conjunto">
+                <div>
+                    <strong>b) {3, 5, 7, 9, 11}:</strong><br>
+                    <code>3 + 2 * Math.floor(Math.random() * 5)</code>
+                </div>
+                <div id="resB" class="valor-generado">-</div>
+            </div>
+
+            <div class="item-conjunto">
+                <div>
+                    <strong>c) {6, 10, 14, 18, 22}:</strong><br>
+                    <code>6 + 4 * Math.floor(Math.random() * 5)</code>
+                </div>
+                <div id="resC" class="valor-generado">-</div>
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

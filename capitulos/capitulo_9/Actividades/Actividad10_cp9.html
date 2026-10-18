@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.10 - Cuestionario Teórico</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .pregunta {
+            margin-bottom: 18px;
+        }
+
+        .pregunta h4 {
+            margin: 0 0 6px 0;
+            color: #1a365d;
+        }
+
+        .pregunta p {
+            margin: 0;
+            color: #334155;
+            background: #ffffff;
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        button {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #084d77;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.10</h2>
+
+        <div class="bloque-salida">
+            <div class="pregunta">
+                <h4>a) ¿Qué significa elegir números "al azar"?</h4>
+                <p>Significa seleccionar un valor de un conjunto donde todos los elementos tienen exactamente la misma probabilidad matemática de ser elegidos de manera impredecible.</p>
+            </div>
+
+            <div class="pregunta">
+                <h4>b) ¿Por qué es útil la función Math.random para simular juegos de probabilidad?</h4>
+                <p>Porque genera números seudoaleatorios distribuidos de forma uniforme entre 0.0 (incluido) y 1.0 (excluido), imitando el comportamiento físico imprevisto de dados, monedas o cartas.</p>
+            </div>
+
+            <div class="pregunta">
+                <h4>c) ¿Por qué es a menudo necesario escalar y/o desplazar los valores producidos por Math.random?</h4>
+                <p>Porque <code>Math.random()</code> solo devuelve valores decimales entre 0 y 1. Escalar (multiplicar) ajusta el ancho del rango de valores deseado, y desplazar (sumar) mueve la serie al número de inicio adecuado (por ejemplo, dados del 1 al 6).</p>
+            </div>
+
+            <div class="pregunta">
+                <h4>d) ¿Por qué es la simulación computarizada de situaciones reales una técnica útil?</h4>
+                <p>Permite analizar eventos complejos o riesgosos de forma segura, rápida y económica en la computadora, realizando miles de iteraciones sin incurrir en costos ni peligros del mundo real.</p>
+            </div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

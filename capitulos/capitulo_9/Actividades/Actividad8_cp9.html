@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.8 - Cargos de Estacionamiento</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        .form-grupo {
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        .form-grupo label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #1a365d;
+        }
+
+        .form-grupo input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .btn-calcular {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 22px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .btn-calcular:hover {
+            background-color: #084d77;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table, td, th {
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: #0b69a3;
+            color: white;
+            text-align: left;
+        }
+
+        .total-recibos {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #1a365d;
+            font-size: 1.1rem;
+            text-align: right;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        .btn-regresar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        var totalAcumulado = 0.0;
+        var contadorCliente = 0;
+
+        function calcularCargos(horas) {
+            if (horas <= 3) {
+                return 2.00;
+            }
+            var cargo = 2.00 + Math.ceil(horas - 3) * 0.50;
+            return Math.min(cargo, 10.00);
+        }
+
+        function agregarCliente() {
+            var campoEntrada = document.getElementById("campoEntrada");
+            var horas = parseFloat(campoEntrada.value);
+            var mensajeError = document.getElementById("mensajeError");
+
+            if (isNaN(horas) || horas <= 0 || horas > 24) {
+                mensajeError.innerHTML = "<span style='color: #c53030;'>Ingrese un número de horas válido (1 - 24).</span>";
+                return;
+            }
+            mensajeError.innerHTML = "";
+
+            var cargoCliente = calcularCargos(horas);
+            totalAcumulado += cargoCliente;
+            contadorCliente++;
+
+            var tablaBody = document.getElementById("cuerpoTabla");
+            var nuevaFila = "<tr>" +
+                "<td>Cliente " + contadorCliente + "</td>" +
+                "<td>" + horas.toFixed(1) + " hrs</td>" +
+                "<td>$" + cargoCliente.toFixed(2) + "</td>" +
+                "</tr>";
+
+            tablaBody.innerHTML += nuevaFila;
+            document.getElementById("divTotal").innerHTML = "Total de recibos acumulados: $" + totalAcumulado.toFixed(2);
+            campoEntrada.value = "";
+        }
+
+        function iniciar() {
+            var boton = document.getElementById("botonCalcular");
+            boton.addEventListener("click", agregarCliente, false);
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.8</h2>
+
+        <div class="bloque-salida">
+            <form action="#" onsubmit="return false;">
+                <div class="form-grupo">
+                    <label for="campoEntrada">Horas de estacionamiento del cliente:</label>
+                    <input id="campoEntrada" type="number" step="0.1" min="0.1" max="24" placeholder="Ej. 4.5">
+                </div>
+                <input id="botonCalcular" class="btn-calcular" type="button" value="Calcular y Registrar Cliente">
+            </form>
+            <div id="mensajeError" style="margin-top: 10px;"></div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Horas</th>
+                        <th>Cargo</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla"></tbody>
+            </table>
+
+            <div id="divTotal" class="total-recibos">Total de recibos acumulados: $0.00</div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button" class="btn-regresar">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

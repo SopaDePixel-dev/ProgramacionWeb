@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.25 - Adivine el Número (1 a 1000)</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 550px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        .instruccion {
+            font-size: 1.1rem;
+            color: #1a365d;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .form-grupo {
+            margin-bottom: 15px;
+        }
+
+        .form-grupo input[type="number"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 1.1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .btn-enviar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 22px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 80%;
+            font-weight: bold;
+        }
+
+        .btn-enviar:hover {
+            background-color: #084d77;
+        }
+
+        .mensaje-pista {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            min-height: 24px;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        .btn-regresar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        var numeroSecreto;
+
+        function iniciarJuego() {
+            numeroSecreto = Math.floor(1 + Math.random() * 1000);
+            document.getElementById("campoIntento").value = "";
+            document.getElementById("campoIntento").disabled = false;
+            document.getElementById("btnEnviar").disabled = false;
+            document.getElementById("divMensaje").innerText = "";
+            document.getElementById("campoIntento").focus();
+        }
+
+        function verificarIntento() {
+            var campo = document.getElementById("campoIntento");
+            var intento = parseInt(campo.value);
+            var divMensaje = document.getElementById("divMensaje");
+
+            if (isNaN(intento) || intento < 1 || intento > 1000) {
+                divMensaje.innerHTML = "<span style='color: #c53030;'>Ingrese un número válido entre 1 y 1000.</span>";
+                return;
+            }
+
+            if (intento === numeroSecreto) {
+                divMensaje.innerHTML = "<span style='color: #15803d;'>¡Felicidades! ¡Adivinó el número!</span><br><br><button onclick='iniciarJuego()' style='padding: 8px 16px; cursor: pointer;'>Jugar otra vez</button>";
+                campo.value = "";
+                campo.disabled = true;
+                document.getElementById("btnEnviar").disabled = true;
+            } else if (intento > numeroSecreto) {
+                divMensaje.innerHTML = "<span style='color: #c53030;'>Demasiado alto. Intente de nuevo.</span>";
+                campo.value = "";
+                campo.focus();
+            } else {
+                divMensaje.innerHTML = "<span style='color: #c53030;'>Demasiado bajo. Intente de nuevo.</span>";
+                campo.value = "";
+                campo.focus();
+            }
+        }
+
+        function iniciar() {
+            document.getElementById("btnEnviar").addEventListener("click", verificarIntento, false);
+            iniciarJuego();
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.25</h2>
+
+        <div class="bloque-salida">
+            <div class="instruccion">Adivine un número entre 1 y 1000</div>
+
+            <form action="#" onsubmit="return false;">
+                <div class="form-grupo">
+                    <input id="campoIntento" type="number" step="1" min="1" max="1000" placeholder="Escribe tu intento">
+                </div>
+                <input id="btnEnviar" class="btn-enviar" type="button" value="Enviar Intento">
+            </form>
+
+            <div id="divMensaje" class="mensaje-pista"></div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button" class="btn-regresar">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

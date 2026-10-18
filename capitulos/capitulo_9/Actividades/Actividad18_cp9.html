@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.18 - Mínimo de Tres Números</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 550px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        .grid-inputs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .form-grupo {
+            text-align: left;
+        }
+
+        .form-grupo label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #1a365d;
+            font-size: 0.85rem;
+        }
+
+        .form-grupo input[type="number"] {
+            width: 100%;
+            padding: 8px 6px;
+            font-size: 0.95rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .btn-calcular {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 22px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .btn-calcular:hover {
+            background-color: #084d77;
+        }
+
+        .resultado-cuadro {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            color: #1a365d;
+            font-weight: bold;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        .btn-regresar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        function minimo3(num1, num2, num3) {
+            return Math.min(num1, Math.min(num2, num3));
+        }
+
+        function calcularMinimo() {
+            var n1 = parseFloat(document.getElementById("num1").value);
+            var n2 = parseFloat(document.getElementById("num2").value);
+            var n3 = parseFloat(document.getElementById("num3").value);
+            var divRes = document.getElementById("divResultado");
+
+            if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+                divRes.innerHTML = "<span style='color: #c53030;'>Ingrese tres números válidos.</span>";
+                return;
+            }
+
+            var min = minimo3(n1, n2, n3);
+            divRes.innerHTML = "El valor más pequeño es: <strong>" + min + "</strong>";
+        }
+
+        function iniciar() {
+            document.getElementById("btnCalcular").addEventListener("click", calcularMinimo, false);
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.18</h2>
+
+        <div class="bloque-salida">
+            <form action="#" onsubmit="return false;">
+                <div class="grid-inputs">
+                    <div class="form-grupo">
+                        <label for="num1">Número 1:</label>
+                        <input id="num1" type="number" step="any" placeholder="Ej. 12.5">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="num2">Número 2:</label>
+                        <input id="num2" type="number" step="any" placeholder="Ej. 8.3">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="num3">Número 3:</label>
+                        <input id="num3" type="number" step="any" placeholder="Ej. 15.1">
+                    </div>
+                </div>
+
+                <input id="btnCalcular" class="btn-calcular" type="button" value="Determinar Mínimo">
+            </form>
+
+            <div id="divResultado" class="resultado-cuadro">Ingrese tres valores para evaluar.</div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button" class="btn-regresar">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

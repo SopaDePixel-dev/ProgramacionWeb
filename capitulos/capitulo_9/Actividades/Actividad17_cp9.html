@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.17 - Conversión de Temperatura</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 550px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        .form-grupo {
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        .form-grupo label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #1a365d;
+        }
+
+        .form-grupo input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .grid-botones {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .btn-convertir {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            font-size: 0.95rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            font-weight: bold;
+        }
+
+        .btn-convertir:hover {
+            background-color: #084d77;
+        }
+
+        .resultado-cuadro {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            color: #1a365d;
+            font-weight: bold;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        .btn-regresar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        function celsius(f) {
+            return (5.0 / 9.0) * (f - 32);
+        }
+
+        function fahrenheit(c) {
+            return (9.0 / 5.0) * c + 32;
+        }
+
+        function convertirACelsius() {
+            var campo = document.getElementById("tempEntrada");
+            var temp = parseFloat(campo.value);
+            var res = document.getElementById("divResultado");
+
+            if (isNaN(temp)) {
+                res.innerHTML = "<span style='color: #c53030;'>Ingrese un valor de temperatura válido.</span>";
+                return;
+            }
+
+            var c = celsius(temp);
+            res.innerHTML = temp + " °F equivalen a " + c.toFixed(2) + " °C";
+        }
+
+        function convertirAFahrenheit() {
+            var campo = document.getElementById("tempEntrada");
+            var temp = parseFloat(campo.value);
+            var res = document.getElementById("divResultado");
+
+            if (isNaN(temp)) {
+                res.innerHTML = "<span style='color: #c53030;'>Ingrese un valor de temperatura válido.</span>";
+                return;
+            }
+
+            var f = fahrenheit(temp);
+            res.innerHTML = temp + " °C equivalen a " + f.toFixed(2) + " °F";
+        }
+
+        function iniciar() {
+            document.getElementById("btnCelsius").addEventListener("click", convertirACelsius, false);
+            document.getElementById("btnFahrenheit").addEventListener("click", convertirAFahrenheit, false);
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.17</h2>
+
+        <div class="bloque-salida">
+            <form action="#" onsubmit="return false;">
+                <div class="form-grupo">
+                    <label for="tempEntrada">Temperatura a convertir:</label>
+                    <input id="tempEntrada" type="number" step="any" placeholder="Ej. 32 o 100">
+                </div>
+
+                <div class="grid-botones">
+                    <input id="btnCelsius" class="btn-convertir" type="button" value="A Celsius (°C)">
+                    <input id="btnFahrenheit" class="btn-convertir" type="button" value="A Fahrenheit (°F)">
+                </div>
+            </form>
+
+            <div id="divResultado" class="resultado-cuadro">Ingrese un valor y seleccione el tipo de conversión.</div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button" class="btn-regresar">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

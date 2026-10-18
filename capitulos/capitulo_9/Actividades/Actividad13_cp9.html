@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.13 - Potencia Entera</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 550px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        .grid-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .form-grupo {
+            text-align: left;
+        }
+
+        .form-grupo label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #1a365d;
+            font-size: 0.9rem;
+        }
+
+        .form-grupo input[type="number"] {
+            width: 100%;
+            padding: 8px 10px;
+            font-size: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .btn-calcular {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 22px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .btn-calcular:hover {
+            background-color: #084d77;
+        }
+
+        .resultado-cuadro {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            color: #1a365d;
+            font-weight: bold;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        .btn-regresar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        function calcular() {
+            var base = parseInt(document.getElementById("base").value);
+            var exponente = parseInt(document.getElementById("exponente").value);
+            var divResultado = document.getElementById("divResultado");
+
+            if (isNaN(base) || isNaN(exponente) || exponente < 0) {
+                divResultado.innerHTML = "<span style='color: #c53030;'>Ingrese una base y un exponente entero (≥ 0) válidos.</span>";
+                return;
+            }
+
+            var res = potenciaEntera(base, exponente);
+            divResultado.innerHTML = base + "<sup>" + exponente + "</sup> = " + res;
+        }
+
+        function potenciaEntera(base, exponente) {
+            var resultado = 1;
+            for (var i = 1; i <= exponente; i++) {
+                resultado *= base;
+            }
+            return resultado;
+        }
+
+        function iniciar() {
+            var boton = document.getElementById("botonCalcular");
+            boton.addEventListener("click", calcular, false);
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.13</h2>
+
+        <div class="bloque-salida">
+            <form action="#" onsubmit="return false;">
+                <div class="grid-inputs">
+                    <div class="form-grupo">
+                        <label for="base">Base (entero):</label>
+                        <input id="base" type="number" step="1" placeholder="Ej. 3">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="exponente">Exponente (entero ≥ 0):</label>
+                        <input id="exponente" type="number" step="1" min="0" placeholder="Ej. 4">
+                    </div>
+                </div>
+                <input id="botonCalcular" class="btn-calcular" type="button" value="Calcular Potencia">
+            </form>
+
+            <div id="divResultado" class="resultado-cuadro">Ingrese la base y el exponente para calcular.</div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button" class="btn-regresar">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

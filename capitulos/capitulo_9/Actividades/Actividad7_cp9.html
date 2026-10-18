@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 9.7 - Área de un Círculo</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 550px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contenedor h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .bloque-salida {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0b69a3;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        .form-grupo {
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        .form-grupo label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #1a365d;
+        }
+
+        .form-grupo input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .btn-calcular {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 22px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .btn-calcular:hover {
+            background-color: #084d77;
+        }
+
+        .resultado-cuadro {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            color: #1a365d;
+            font-weight: bold;
+        }
+
+        .boton-regresar {
+            text-align: center;
+        }
+
+        .btn-regresar {
+            background-color: #0b69a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #084d77;
+        }
+    </style>
+    <script type="text/javascript">
+        function calcular() {
+            var campoEntrada = document.getElementById("campoEntrada");
+            var radio = parseFloat(campoEntrada.value);
+            var parrafoResultado = document.getElementById("parrafoResultado");
+
+            if (isNaN(radio) || radio < 0) {
+                parrafoResultado.innerHTML = "<span style='color: #c53030;'>Por favor ingrese un radio válido.</span>";
+                return;
+            }
+
+            var area = areaCirculo(radio);
+            parrafoResultado.innerHTML = "El área del círculo con radio " + radio + " es: " + area.toFixed(4);
+        }
+
+        function areaCirculo(radio) {
+            return Math.PI * Math.pow(radio, 2);
+        }
+
+        function iniciar() {
+            var boton = document.getElementById("botonCalcular");
+            boton.addEventListener("click", calcular, false);
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Actividad 9.7</h2>
+
+        <div class="bloque-salida">
+            <form action="#" onsubmit="return false;">
+                <div class="form-grupo">
+                    <label for="campoEntrada">Introduzca el radio del círculo:</label>
+                    <input id="campoEntrada" type="number" step="any" placeholder="Ej. 7">
+                </div>
+                <input id="botonCalcular" class="btn-calcular" type="button" value="Calcular Área">
+            </form>
+
+            <div id="parrafoResultado" class="resultado-cuadro">Ingrese un radio y presione calcular.</div>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="index_Actividades.html">
+                <button type="button" class="btn-regresar">Regresar</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
