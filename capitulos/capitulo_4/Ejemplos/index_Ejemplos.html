@@ -3,58 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplos Capitulo 4</title>
+    <title>Ejemplos - Capítulo 4</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        .contenedor-general {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #2b5b84;
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .linea-separadora {
+            border: none;
+            border-top: 2px solid #2b5b84;
+            margin-bottom: 35px;
+        }
+
+        .grid-ejemplos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .boton-ejemplo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 16px 20px;
+            background-color: #ffffff;
+            color: #1a5b8c;
+            text-decoration: none;
+            font-size: 1.05rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease;
+        }
+
+        .boton-ejemplo:hover {
+            background-color: #f8fafc;
+            border-color: #94a3b8;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .boton-ejemplo p {
+            margin: 0;
+        }
+
+        .boton-regresar {
+            background-color: #6c757d;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .boton-regresar:hover {
+            background-color: #5a6268;
+        }
+
+        .boton-regresar p {
+            margin: 0;
+            color: #ffffff;
+        }
+
+        @media (max-width: 900px) {
+            .grid-ejemplos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .grid-ejemplos {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1 style="text-align: center;">Ejemplos Capitulo 4</h1>
-    <hr>
 
-    <a href="Ejemplo1_cap4.html">
-        <p>Ejemplo 1</p>
-    </a>
-    <a href="Ejemplo2_cap4.html">
-        <p>Ejemplo 2</p>
-    </a>
-    <a href="Ejemplo3_cap4.html">
-        <p>Ejemplo 3</p>
-    </a>
-    <a href="Ejemplo4_cap4/Externa.html">
-        <p>Ejemplo 4</p>
-    </a>
-    <a href="Ejemplo5_cap4.html">
-        <p>Ejemplo 5</p>
-    </a>
-    <a href="Ejemplo6_cap4.html">
-        <p>Ejemplo 6</p>
-    </a>
-    <a href="Ejemplo7_cap4.html">
-        <p>Ejemplo 7</p>
-    </a>
-    <a href="Ejemplo8_cap4.html">
-        <p>Ejemplo 8</p>
-    </a>
-    <a href="Ejemplo9_cap4.html">
-        <p>Ejemplo 9</p>
-    </a>
-    <a href="Ejemplo10_cap4.html">
-        <p>Ejemplo 10</p>
-    </a>
-    <a href="Ejemplo11_cap4.html">
-        <p>Ejemplo 11</p>
-    </a>
-    <a href="Ejemplo12_cap4.html">
-        <p>Ejemplo 12</p>
-    </a>
-    <a href="Ejemplo13_cap4/usuario_absoluto.html">
-        <p>Ejemplo 13</p>
-    </a>
-    <a href="Ejemplo14_cap4.html">
-        <p>Ejemplo 14</p>
-    </a>
+    <div class="contenedor-general">
+        <h1>Ejemplos - Capítulo 4</h1>
+        <hr class="linea-separadora">
 
-    <hr>
-    <a href="../index_cap4.html">
-        <p>Regresar</p>
-    </a>
+        <div class="grid-ejemplos">
+            <a href="Ejemplo1_cap4.html" class="boton-ejemplo">
+                <p>Ejemplo 1</p>
+            </a>
+            <a href="Ejemplo2_cap4.html" class="boton-ejemplo">
+                <p>Ejemplo 2</p>
+            </a>
+            <a href="Ejemplo3_cap4.html" class="boton-ejemplo">
+                <p>Ejemplo 3</p>
+            </a>
+            <a href="Ejemplo4_cap4/Externa.html" class="boton-ejemplo">
+                <p>Ejemplo 4</p>
+            </a>
+            <a href="Ejemplo5_cap4.html" class="boton-ejemplo">
+                <p>Ejemplo 5</p>
+            </a>
+            <a href="Ejemplo6_cap4.html" class="boton-ejemplo">
+                <p>Ejemplo 6</p>
+            </a>
+            <a href="Ejemplo7_cap4.html" class="boton-ejemplo">
+                <p>Ejemplo 7</p>
+            </a>
+            <a href="Ejemplo8_cap4.html" class="boton-ejemplo">
+                <p>Ejemplo 8</p>
+            </a>
+            <a href="Ejemplo9_cap4.html" class="boton-ejemplo">
+                <p>Ejemplo 9</p>
+            </a>
+            <a href="Ejemplo10_cap4.html" class="boton-ejemplo">
+                <p>Ejemplo 10</p>
+            </a>
+            <a href="Ejemplo11_cap4.html" class="boton-ejemplo">
+                <p>Ejemplo 11</p>
+            </a>
+            <a href="Ejemplo12_cap4.html" class="boton-ejemplo">
+                <p>Ejemplo 12</p>
+            </a>
+            <a href="Ejemplo13_cap4/usuario_absoluto.html" class="boton-ejemplo">
+                <p>Ejemplo 13</p>
+            </a>
+            <a href="Ejemplo14_cap4.html" class="boton-ejemplo">
+                <p>Ejemplo 14</p>
+            </a>
+        </div>
+
+        <a href="../index_cap4.html" class="boton-regresar">
+            <p>Regresar al Capítulo 4</p>
+        </a>
+    </div>
+
 </body>
 </html>

@@ -3,20 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capitulo 4</title>
+    <title>Capítulo 4</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .contenedor {
+            background: #ffffff;
+            width: 100%;
+            max-width: 550px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2b5b84;
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .linea-separadora {
+            border: none;
+            border-top: 2px solid #2b5b84;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .opciones-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .btn-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 20px;
+            background-color: #ffffff;
+            color: #1a5b8c;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-menu:hover {
+            background-color: #f8fafc;
+            border-color: #0b69a3;
+            color: #0b69a3;
+        }
+
+        .btn-menu p {
+            margin: 0;
+        }
+
+        .boton-regresar {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .btn-regresar {
+            background-color: #6c757d;
+            color: #ffffff;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-regresar:hover {
+            background-color: #5a6268;
+        }
+
+        .btn-regresar p {
+            margin: 0;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
-    <h1 style="text-align: center;">Capitulo 4</h1>
-    <hr>
-    <a href="Actividades/index_Actividades.html">
-        <p>Actividades</p>
-    </a>
-    <a href="Ejemplos/index_Ejemplos.html">
-        <p>Ejemplos</p>
-    </a>
-    <hr>
-    <a href="../../index.html">
-        <p>Regresar</p>
-    </a>
+
+    <div class="contenedor">
+        <h1>Capítulo 4</h1>
+        <hr class="linea-separadora">
+
+        <div class="opciones-menu">
+            <a href="Actividades/index_Actividades.html" class="btn-menu">
+                <p>Actividades</p>
+            </a>
+            <a href="Ejemplos/index_Ejemplos.html" class="btn-menu">
+                <p>Ejemplos</p>
+            </a>
+        </div>
+
+        <div class="boton-regresar">
+            <a href="../../index.html" class="btn-regresar">
+                <p>Regresar</p>
+            </a>
+        </div>
+    </div>
+
 </body>
 </html>

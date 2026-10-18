@@ -1,46 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividades Capitulo 3</title>
+    <title>Actividades - Capítulo 3</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        .contenedor-general {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #2b5b84;
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .linea-separadora {
+            border: none;
+            border-top: 2px solid #2b5b84;
+            margin-bottom: 35px;
+        }
+
+        .grid-actividades {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .boton-actividad {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 16px 20px;
+            background-color: #ffffff;
+            color: #1a5b8c;
+            text-decoration: none;
+            font-size: 1.05rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease;
+        }
+
+        .boton-actividad:hover {
+            background-color: #f8fafc;
+            border-color: #94a3b8;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .boton-actividad p {
+            margin: 0;
+        }
+
+        .boton-regresar {
+            background-color: #6c757d;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .boton-regresar:hover {
+            background-color: #5a6268;
+        }
+
+        .boton-regresar p {
+            margin: 0;
+            color: #ffffff;
+        }
+
+        @media (max-width: 900px) {
+            .grid-actividades {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .grid-actividades {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <h1 style="text-align: center;">Actividades Capitulo 3 </h1>
-    <hr>
+    <div class="contenedor-general">
+        <h1>Actividades - Capítulo 3</h1>
+        <hr class="linea-separadora">
 
-    <a href="Portafolio_Actividades/Actividad1_Cap3.html">
-        <p>Actividad 1</p>
-    </a>
-    <a href="Portafolio_Actividades/Actividad2_cap3.html">
-        <p>Actividad 2</p>
-    </a>
-    <a href="Portafolio_Actividades/Actividad3_cap3.html">
-        <p>Actividad 3</p>
-    </a>
-    <a href="Portafolio_Actividades/Actividad4_cap3.html">
-        <p>Actividad 4</p>
-    </a>
-    <a href="Portafolio_Actividades/Actividad5_cap3.html">
-        <p>Actividad 5</p>
-    </a>  
-     <a href="Portafolio_Actividades/Actividad6_cap3.html">
-        <p>Actividad 6</p>
-    </a>
-         <a href="Portafolio_Actividades/Actividad7_cap3.html">
-        <p>Actividad 7</p>
-    </a>
+        <div class="grid-actividades">
+            <a href="Portafolio_Actividades/Actividad1_Cap3.html" class="boton-actividad">
+                <p>Actividad 1</p>
+            </a>
+            <a href="Portafolio_Actividades/Actividad2_cap3.html" class="boton-actividad">
+                <p>Actividad 2</p>
+            </a>
+            <a href="Portafolio_Actividades/Actividad3_cap3.html" class="boton-actividad">
+                <p>Actividad 3</p>
+            </a>
+            <a href="Portafolio_Actividades/Actividad4_cap3.html" class="boton-actividad">
+                <p>Actividad 4</p>
+            </a>
+            <a href="Portafolio_Actividades/Actividad5_cap3.html" class="boton-actividad">
+                <p>Actividad 5</p>
+            </a>  
+            <a href="Portafolio_Actividades/Actividad6_cap3.html" class="boton-actividad">
+                <p>Actividad 6</p>
+            </a>
+            <a href="Portafolio_Actividades/Actividad7_cap3.html" class="boton-actividad">
+                <p>Actividad 7</p>
+            </a>
+            <a href="Portafolio_Actividades/Actividad8_cap3.html" class="boton-actividad">
+                <p>Actividad 8</p>
+            </a>
+            <a href="Portafolio_Actividades/Actividad9_cap3.html" class="boton-actividad">
+                <p>Actividad 9</p>
+            </a>
+        </div>
 
-    <a href="Portafolio_Actividades/Actividad8_cap3.html">
-        <p>Actividad 8</p>
-    </a>
-      <a href="Portafolio_Actividades/Actividad9_cap3.html">
-        <p>Actividad 9</p>
-    </a>
-    <hr>
-    <a href="../index_cp3.html">
-        <p>Regresar</p>
-    </a>
+        <a href="../index_cp3.html" class="boton-regresar">
+            <p>Regresar al Capítulo 3</p>
+        </a>
+    </div>
+
 </body>
 </html>
